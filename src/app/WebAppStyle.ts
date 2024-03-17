@@ -8,7 +8,7 @@ export const WebAppContainer = tw.div`
     flex
     bg-primary-bg
     w-full
-    h-[100lvh]
+    h-[100dvh]
     text-zinc-100
     overflow-y-scroll
     overflow-x-hidden
