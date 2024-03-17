@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import Me from './me.jpg'
-import HarveyMudd from './harvey_mudd.png'
+import Q from './q.png'
 import Cuesta from './cuesta.png'
 import FHS from './foothill_hs.jpg'
 
@@ -60,10 +60,10 @@ export default function WebApp({ _props }: any) {
                         <div className='mt-[5px]'>
                             <h1 className='text-xl'>BS in Computer Science</h1>
                             <div className='flex mt-[2px]'>
-                                <img className='bg-white p-[3px] w-[65px] h-[65px] mr-[10px] mt-[4px]' src={HarveyMudd}/>
+                                <img className='bg-white p-[3px] w-[65px] h-[65px] mr-[10px] mt-[4px]' src={Q}/>
                                 <div>
-                                    <h1>Harvey Mudd College</h1>
-                                    <h1 className='text-zinc-400'>Claremont, CA</h1>
+                                    <h1>TBT 4yr University</h1>
+                                    <h1 className='text-zinc-400'>?, CA</h1>
                                     <h1 className='text-zinc-400'>2025 - 2027</h1>
                                 </div>
                                 
