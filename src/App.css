@@ -11,6 +11,11 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
+body {
+  background-color: rgb(36 36 35);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 ::selection {
   background: rgba(5,150,105,0.5); /* WebKit/Blink Browsers */
 }

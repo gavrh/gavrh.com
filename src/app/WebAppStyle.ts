@@ -6,7 +6,6 @@ import tw from 'tailwind-styled-components'
 // container
 export const WebAppContainer = tw.div`
     flex
-    bg-primary-bg
     w-full
     h-[100dvh]
     text-zinc-100
