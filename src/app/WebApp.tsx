@@ -105,8 +105,8 @@ export default function WebApp({ _props }: any) {
                                     *
                                     <span className='font-semibold text-white'>other_skills</span>
                                 </span>
-                                <h1>Communication, Problem-Solving, Collaboration</h1>
-                                <h1>Time Management, Adaptability, Leadership</h1>
+                                <h1>Communication, Problem-Solving, Collaboration,</h1>
+                                <h1>Time Management, Adaptability, Leadership,</h1>
                                 <h1>Customer Service, Financial Awareness, Resilience</h1>
                                 {/* about me */}
                                 <span className='text-emerald-600 font-bold text-2xl mt-[20px]'>
