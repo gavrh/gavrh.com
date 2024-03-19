@@ -9,6 +9,7 @@ export const WebAppContainer = tw.div`
     w-full
     h-[100dvh]
     text-zinc-100
+    justify-text
     overflow-y-scroll
     overflow-x-hidden
 `
@@ -17,7 +18,7 @@ export const WebAppWrapper = tw.div`
     flex
     flex-col
     w-full
-    max-w-[1220px]
+    max-w-[1000px]
     h-full
     mx-auto
 `
@@ -25,18 +26,15 @@ export const WebAppWrapper = tw.div`
 export const WebAppTop = tw.div`
     flex
     flex-col
-    lg:flex-row
+    md:flex-col
     justify-between
-    mx-[10px]
+    px-[10px]
 `
 
 // profile
 export const ProfileContainer = tw.div`
     flex
     flex-col
-    lg:min-w-[400px]
-    lg:max-w-[400px]
-    pr-[20px]
 `
 // experience
 export const ExperienceContainer = tw.div`
@@ -49,7 +47,7 @@ export const ProjectsContainer = tw.div`
     flex
     flex-col
     w-full
-    mx-[10px]
+    px-[10px]
 `
 // section title
 export const SectionTitle = tw.h1`
@@ -57,7 +55,8 @@ export const SectionTitle = tw.h1`
     text-3xl
     underline
     decoration-emerald-600
-    my-[20px]
+    mt-[40px]
+    mb-[20px]
     font-semibold
 `
 // section title

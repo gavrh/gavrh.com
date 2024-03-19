@@ -30,7 +30,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 20px;
   background-color: transparent;
 }
 
@@ -39,8 +39,9 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(5,150,105,0.5);
-  border-right: 5px;
+  background-color: rgba(167, 167, 167, 0.2);
+  border-right: 6px;
+  border-left: 6px;
   border-style: solid;
   border-color: #242423;
   border-radius: 50px
