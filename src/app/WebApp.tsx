@@ -98,7 +98,7 @@ export default function WebApp({ _props }: any) {
                                     *
                                     <span className='font-semibold text-white'>technical_skills</span>
                                 </span>
-                                <h1>TypeScript, Golang, C/C++, Rust, PSQL, Java</h1>
+                                <h1>TypeScript, Golang, C/C++, Rust, PSQL, Java,</h1>
                                 <h1>Docker, Node.js, React, Expo, CMakefile</h1>
                                 {/* other skills */}
                                 <span className='text-emerald-600 font-bold text-2xl mt-[20px]'>
