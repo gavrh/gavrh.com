@@ -243,7 +243,6 @@ export default function WebApp({ _props }: any) {
                                     <div className='flex items-baseline'>
                                         <h1 className='text-xl font-semibold'>celebfly</h1>
                                         <h1 className='ml-[7px] text-zinc-400'>Celebrity Jet Tracker</h1>
-                                        <a className='ml-[7px]' href='https://celebfly.com' target='_blank'>celebfly.com</a>
                                     </div>
                                     <a href='https://github.com/grhx/celebfly' target='_blank'>github.com/grhx/celebfly</a>
                                     <h1>React, TypeScript, Golang</h1>
