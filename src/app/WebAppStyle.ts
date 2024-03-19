@@ -53,8 +53,6 @@ export const ProjectsContainer = tw.div`
 export const SectionTitle = tw.h1`
     w-full
     text-3xl
-    underline
-    decoration-emerald-600
     mt-[40px]
     mb-[20px]
     font-semibold

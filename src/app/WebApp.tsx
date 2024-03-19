@@ -37,9 +37,9 @@ export default function WebApp({ _props }: any) {
                 <WebAppTop>
                     {/* profile */}
                     <ProfileContainer>
-                        <div className='flex'>
-                            <SectionTitle className='mt-[20px] flex-1'>profile</SectionTitle>
-                            <div className='w-full h-[3px] ml-[-1px] mt-[52px] bg-emerald-600'/>
+                        <div className='flex items-center'>
+                            <SectionTitle className='flex-1'>profile</SectionTitle>
+                            <div className='w-full h-[3px] ml-[15px] mt-[47px] mb-[20px] bg-emerald-600'/>
                         </div>
                         <div className='flex flex-col md:flex-row'>
                             <div className='flex flex-col min-w-[400px]'>
@@ -130,9 +130,9 @@ export default function WebApp({ _props }: any) {
 
                     {/* experience */}
                     <ExperienceContainer>
-                        <div className='flex'>
+                        <div className='flex items-center'>
                             <SectionTitle className='flex-1'>experience</SectionTitle>
-                            <div className='w-full h-[3px] ml-[-1px] mt-[72px] bg-emerald-600'/>
+                            <div className='w-full h-[3px] ml-[15px] mt-[47px] mb-[20px] bg-emerald-600'/>
                         </div>
                         <span className='text-emerald-600 font-bold text-2xl mt-[0px] mb-[10px]'>
                             *
@@ -230,9 +230,9 @@ export default function WebApp({ _props }: any) {
 
                 {/* projects */}
                 <ProjectsContainer>
-                    <div className='flex'>
-                        <SectionTitle className='flex-1'>projects</SectionTitle>
-                        <div className='w-full h-[3px] ml-[-1px] mt-[72px] bg-emerald-600'/>
+                    <div className='flex items-center'>
+                            <SectionTitle className='flex-1'>projects</SectionTitle>
+                            <div className='w-full h-[3px] ml-[15px] mt-[47px] mb-[20px] bg-emerald-600'/>
                     </div>
                     {/* celebfly */}
                     <div className='flex flex-row mb-[30px]'>
