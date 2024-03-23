@@ -9,6 +9,7 @@ import Fiverr from './fiverr.jpg'
 import Target from './target.png'
 import Psp from './petsuppliesplus.jpg'
 import Chilis from './chilis.jpg'
+import Tutoring from './tutoring.png'
 
 // styled components
 import {
@@ -138,6 +139,27 @@ export default function WebApp({ _props }: any) {
                             *
                             <span className='font-semibold text-white'>technical_experience</span>
                         </span>
+                        {/* tutoring */}
+                        <div className='flex flex-row mb-[20px]'>
+                            <div className='flex flex-col'>
+                                <div className='flex mb-[10px] mt-[2px]'>
+                                    <img className='bg-white w-[65px] h-[65px] mr-[10px] mt-[4px]' src={Tutoring}/>
+                                    <div>
+                                        <h1>Freelance Computer Science Tutor</h1>
+                                        <h1 className='text-zinc-400'>Hybrid</h1>
+                                        <h1 className='text-zinc-400'>Apr 2023 - present</h1>
+                                    </div>
+                                </div>
+                                <h1>
+                                    Experienced Computer Science Tutor with a year of dedicated teaching across diverse
+                                    age groups, from kids to college students. Specializing in creating interactive and 
+                                    personalized learning experiences, I adapt teaching methods to suit individual learning 
+                                    styles and needs. Through one-on-one and small group sessions, I foster a supportive 
+                                    environment where students feel empowered to explore computer science concepts, develop 
+                                    problem-solving skills, and cultivate a passion for technology.
+                                </h1>
+                            </div>
+                        </div>
                         {/* fiverr */}
                         <div className='flex flex-row mb-[20px]'>
                             <div className='flex flex-col'>
