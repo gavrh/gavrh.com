@@ -10,6 +10,7 @@ import Target from './target.png'
 import Psp from './petsuppliesplus.jpg'
 import Chilis from './chilis.jpg'
 import Tutoring from './tutoring.png'
+import Glang from './glang.png'
 
 // styled components
 import {
@@ -350,7 +351,7 @@ export default function WebApp({ _props }: any) {
                     <div className='flex flex-row mb-[30px]'>
                         <div className='flex flex-col'>
                             <div className='flex mb-[10px]'>
-                                <img className='bg-white w-[75px] h-[75px] p-[10px] ' src='https:www.pngkey.com/png/full/177-1779903_g-logo-g-logo-png.png' />
+                                <img className='bg-white w-[75px] h-[75px] p-[10px] ' src={Glang} />
                                 <div className='ml-[10px]'>
                                     <div className='flex items-baseline'>
                                         <h1 className='text-xl font-semibold'>glang</h1>
