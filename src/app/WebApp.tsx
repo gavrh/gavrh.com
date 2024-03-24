@@ -66,7 +66,7 @@ export default function WebApp({ _props }: any) {
                                     <div className='flex mt-[2px]'>
                                         <img className='bg-white p-[3px] w-[65px] h-[65px] mr-[10px] mt-[4px]' src={Q}/>
                                         <div>
-                                            <h1>TBD 4yr University</h1>
+                                            <h1>TBD Undergrad University</h1>
                                             <h1 className='text-zinc-400'>?, CA</h1>
                                             <h1 className='text-zinc-400'>2025 - 2027</h1>
                                         </div>
