@@ -99,8 +99,10 @@ export default function WebApp({ _props }: any) {
                                     *
                                     <span className='font-semibold text-white'>technical_skills</span>
                                 </span>
-                                <h1>TypeScript, Golang, C/C++, Rust, PSQL, Java,</h1>
-                                <h1>Docker, Node.js, React, Expo, CMakefile</h1>
+                                <h1>TypeScript, Golang, C/C++, Rust, PSQL, Java, Ziglang, Exlixir,</h1>
+                                <h1>Docker, Node.js, React, Git, AWS, Make/CMakefile,</h1>
+                                <h1>Web & Desktop Aplications, APIs, WebSockets, Databases,</h1>
+                                <h1>PL & OS Development</h1>
                                 {/* other skills */}
                                 <span className='text-emerald-600 font-bold text-2xl mt-[20px]'>
                                     *
@@ -256,71 +258,74 @@ export default function WebApp({ _props }: any) {
                             <SectionTitle className='flex-1'>projects</SectionTitle>
                             <div className='w-full h-[3px] ml-[15px] mt-[47px] mb-[20px] bg-emerald-600'/>
                     </div>
-                    {/* celebfly */}
-                    <div className='flex flex-row mb-[30px]'>
-                        <div className='flex flex-col'>
-                            <div className='flex mb-[10px]'>
-                                <img className='bg-white w-[75px] h-[75px] object-cover' src={Celeb} />
-                                <div className='ml-[10px]'>
-                                    <div className='flex items-baseline'>
-                                        <h1 className='text-xl font-semibold'>celebfly</h1>
-                                        <h1 className='ml-[7px] text-zinc-400'>Celebrity Jet Tracker</h1>
-                                    </div>
-                                    <a href='https://github.com/grhx/celebfly' target='_blank'>github.com/grhx/celebfly</a>
-                                    <h1>React, TypeScript, Golang</h1>
-                                </div>
-                                
-                                
-                            </div>
-                            <h1>
-                                I developed a cutting-edge celebrity jet tracker utilizing publicly available data online.
-                                This innovative tool allows users to monitor the movements of private jets owned by
-                                celebrities, providing real-time updates on their whereabouts and travel destinations.
-                                Leveraging my expertise in data aggregation and analysis, I designed an intuitive interface
-                                that offers users seamless navigation and access to comprehensive flight information.
-                                By harnessing the power of the API and employing data visualization techniques,
-                                I crafted a dynamic platform that caters to both casual enthusiasts and industry professionals alike,
-                                offering valuable insights into the travel patterns of prominent figures. This project not only
-                                showcases my proficiency in working with online APIs but also demonstrates my ability to create
-                                impactful solutions with practical applications in various domains.
-                            </h1>
-                        </div>
-                    </div>
-                    {/* babylon */}
-                    <div className='flex flex-row mb-[30px]'>
-                        <div className='flex flex-col'>
-                            <div className='flex mb-[10px]'>
-                                <img className='bg-white w-[75px] h-[75px]' src="https://cdn2.steamgriddb.com/icon_thumb/f4491fcc2896910ad60de6986f83b31c.png" />
-                                <div className='ml-[10px]'>
-                                    <div className='flex items-baseline'>
-                                        <h1 className='text-xl font-semibold'>babylon</h1>
-                                        <h1 className='ml-[7px] text-zinc-400'>Code/Text Editor</h1>
-                                    </div>
-                                    <a href='https://github.com/grhx/babylon' target='_blank'>github.com/grhx/babylon</a>
-                                    <h1>Golang, Fyne GUI, Lua</h1>
-                                </div>
-                                
-                                
-                            </div>
-                            <h1>
-                                I've developed a lightweight and fast text editor using the Fyne GUI toolkit.
-                                Leveraging GoLang's concurrency and Fyne's efficient rendering, the editor
-                                ensures swift performance and minimal system resource consumption. The standout
-                                feature lies in its built-in Lua extension support, enabling users to customize
-                                and extend functionality seamlessly. With Lua scripting, users can automate tasks,
-                                create custom commands, and integrate third-party tools, enhancing the editor's
-                                versatility without compromising its performance. Through a clean interface and
-                                robust backend logic, our text editor delivers an efficient and customizable
-                                editing experience, setting a benchmark for lightweight, extensible, and fast
-                                text editing applications.
-                            </h1>
-                        </div>
-                    </div>
+                    {
+                    //{/* celebfly */}
+                    //<div className='flex flex-row mb-[30px]'>
+                    //    <div className='flex flex-col'>
+                    //        <div className='flex mb-[10px]'>
+                    //            <img className='bg-white w-[75px] h-[75px] object-cover' src={Celeb} />
+                    //            <div className='ml-[10px]'>
+                    //                <div className='flex items-baseline'>
+                    //                    <h1 className='text-xl font-semibold'>celebfly</h1>
+                    //                    <h1 className='ml-[7px] text-zinc-400'>Celebrity Jet Tracker</h1>
+                    //                </div>
+                    //                <a href='https://github.com/grhx/celebfly' target='_blank'>github.com/grhx/celebfly</a>
+                    //                <h1>React, TypeScript, Golang</h1>
+                    //            </div>
+                    //            
+                    //            
+                    //        </div>
+                    //        <h1>
+                    //            I developed a cutting-edge celebrity jet tracker utilizing publicly available data online.
+                    //            This innovative tool allows users to monitor the movements of private jets owned by
+                    //            celebrities, providing real-time updates on their whereabouts and travel destinations.
+                    //            Leveraging my expertise in data aggregation and analysis, I designed an intuitive interface
+                    //            that offers users seamless navigation and access to comprehensive flight information.
+                    //            By harnessing the power of the API and employing data visualization techniques,
+                    //            I crafted a dynamic platform that caters to both casual enthusiasts and industry professionals alike,
+                    //            offering valuable insights into the travel patterns of prominent figures. This project not only
+                    //            showcases my proficiency in working with online APIs but also demonstrates my ability to create
+                    //            impactful solutions with practical applications in various domains.
+                    //        </h1>
+                    //    </div>
+                    //</div>
+                    
+                    //{/* babylon */}
+                    // <div className='flex flex-row mb-[30px]'>
+                    //    <div className='flex flex-col'>
+                    //        <div className='flex mb-[10px]'>
+                    //            <img className='bg-white w-[75px] h-[75px]' src="https://cdn2.steamgriddb.com/icon_thumb/f4491fcc2896910ad60de6986f83b31c.png" />
+                    //            <div className='ml-[10px]'>
+                    //                <div className='flex items-baseline'>
+                    //                    <h1 className='text-xl font-semibold'>babylon</h1>
+                    //                    <h1 className='ml-[7px] text-zinc-400'>Code/Text Editor</h1>
+                    //                </div>
+                    //                <a href='https://github.com/grhx/babylon' target='_blank'>github.com/grhx/babylon</a>
+                    //                <h1>Golang, Fyne GUI, Lua</h1>
+                    //            </div>
+                    //            
+                    //            
+                    //        </div>
+                    //        <h1>
+                    //            I've developed a lightweight and fast text editor using the Fyne GUI toolkit.
+                    //            Leveraging GoLang's concurrency and Fyne's efficient rendering, the editor
+                    //            ensures swift performance and minimal system resource consumption. The standout
+                    //            feature lies in its built-in Lua extension support, enabling users to customize
+                    //            and extend functionality seamlessly. With Lua scripting, users can automate tasks,
+                    //            create custom commands, and integrate third-party tools, enhancing the editor's
+                    //            versatility without compromising its performance. Through a clean interface and
+                    //            robust backend logic, our text editor delivers an efficient and customizable
+                    //            editing experience, setting a benchmark for lightweight, extensible, and fast
+                    //            text editing applications.
+                    //        </h1>
+                    //    </div>
+                    // </div>
+                    }
                     {/* disgord */}
                     <div className='flex flex-row mb-[30px]'>
                         <div className='flex flex-col'>
                             <div className='flex mb-[10px]'>
-                                <img className='bg-white w-[75px] h-[75px]' src='https://avatars.githubusercontent.com/u/85959578?s=280&v=4' />
+                                <img className='bg-white w-[75px] h-[75px]' src='https://avatars.githubusercontent.com/u/85959578?s=400&v=4' />
                                 <div className='ml-[10px]'>
                                     <div className='flex items-baseline'>
                                         <h1 className='text-xl font-semibold'>disgord</h1>
@@ -338,6 +343,30 @@ export default function WebApp({ _props }: any) {
                                 With its nearly complete coverage of all Discord API features, Disgord unlocks limitless possibilities for building dynamic and immersive experiences within the Discord ecosystem. 
                                 Whether you're crafting bots, managing communities, or orchestrating engaging interactions, Disgord empowers you to unleash your creativity with ease and efficiency. Harness the full potential of
                                 Discord integration effortlessly with Disgord.
+                            </h1>
+                        </div>
+                    </div>
+                    {/* glang */}
+                    <div className='flex flex-row mb-[30px]'>
+                        <div className='flex flex-col'>
+                            <div className='flex mb-[10px]'>
+                                <img className='bg-white w-[75px] h-[75px] p-[10px] ' src='https:www.pngkey.com/png/full/177-1779903_g-logo-g-logo-png.png' />
+                                <div className='ml-[10px]'>
+                                    <div className='flex items-baseline'>
+                                        <h1 className='text-xl font-semibold'>glang</h1>
+                                        <h1 className='ml-[7px] text-zinc-400'>(unfinished) CPL</h1>
+                                    </div>
+                                    <a href='https://github.com/grhx/glang' target='_blank'>github.com/grhx/glang</a>
+                                    <h1>C, LLVM</h1>
+                                </div>
+                                
+                                
+                            </div>
+                            <h1>
+                                Glang is a cutting-edge programming language crafted in C and empowered by LLVM for seamless compilation into efficient machine code.
+                                Its hallmark features include a robust static type system for early error detection, automatic memory management ensuring optimal resource 
+                                utilization, and built-in support for concurrency to facilitate the development of parallel and distributed applications. With Glang's emphasis 
+                                on efficiency, reliability, and extensibility, it serves as a potent tool for tackling a wide array of software development challenges with precision and scalability.
                             </h1>
                         </div>
                     </div>
