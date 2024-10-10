@@ -198,7 +198,7 @@ export default function WebApp({ _props }: any) {
                                     <div>
                                         <h1>Target - General Merchandise</h1>
                                         <h1 className='text-zinc-400'>San Luis Obispo, CA</h1>
-                                        <h1 className='text-zinc-400'>Mar 2024 - present</h1>
+                                        <h1 className='text-zinc-400'>Mar 2024 - Jun 2024</h1>
                                     </div>
                                 </div>
                                 <h1>
