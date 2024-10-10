@@ -46,13 +46,13 @@ export default function WebApp({ _props }: any) {
                         <div className='flex flex-col md:flex-row'>
                             <div className='flex flex-col min-w-[400px]'>
                                 <div className='flex'>
-                                    <img className='w-[150px] h-[150px] mr-[15px]' src={Me} />
+                                    <img className='w-[150px] h-[150px] mr-[15px] object-scale-down' src={Me} />
                                     <div className='child:mb-[5px]'>
                                         <h1 className='font-semibold text-xl mt-[10px] leading-[18px]'>Gavin R. Holmes</h1>
                                         <h1 className='text-zinc-400'>GAV-in HOHMZ (he/him)</h1>
                                         <h1>gavnrh@gmail.com</h1>
-                                        <a href='https://linkedin.com/in/gavholm' target='_blank'>linkedin/gavholm</a><br/>
-                                        <a href='https://github.com/grhx' target='_blank'>github/grhx</a>
+                                        <a href='https://linkedin.com/in/gavholm' target='_blank'>linkedin.com/in/gavholm</a><br/>
+                                        <a href='https://github.com/grhx' target='_blank'>github.com/grhx</a>
                                     </div>
                                 </div>
 
