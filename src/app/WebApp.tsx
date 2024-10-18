@@ -10,6 +10,7 @@ import Target from './target.png'
 import Psp from './petsuppliesplus.jpg'
 import Chilis from './chilis.jpg'
 import Tutoring from './tutoring.png'
+import Dcord from './dcord-rs.png'
 import Glang from './glang.jpg'
 
 // styled components
@@ -322,28 +323,28 @@ export default function WebApp({ _props }: any) {
                     //    </div>
                     // </div>
                     }
-                    {/* disgord */}
+                    {/* dcord */}
                     <div className='flex flex-row mb-[30px]'>
                         <div className='flex flex-col'>
                             <div className='flex mb-[10px]'>
-                                <img className='bg-white w-[75px] h-[75px]' src='https://avatars.githubusercontent.com/u/85959578?s=400&v=4' />
+                                <img className='bg-white w-[75px] h-[75px]' src={Dcord} />
                                 <div className='ml-[10px]'>
                                     <div className='flex items-baseline'>
-                                        <h1 className='text-xl font-semibold'>disgord</h1>
+                                        <h1 className='text-xl font-semibold'>dcord.rs</h1>
                                         <h1 className='ml-[7px] text-zinc-400'>Discord API Framework</h1>
                                     </div>
-                                    <a href='https://github.com/grhx/disgord' target='_blank'>github.com/grhx/disgord</a>
-                                    <h1>Golang</h1>
+                                    <a href='https://github.com/grhx/dcord' target='_blank'>github.com/grhx/dcord</a>
+                                    <h1>Rust</h1>
                                 </div>
                                 
                                 
                             </div>
                             <h1>
-                                Disgord is your ultimate solution for seamless integration with the Discord chat client API, offering robust low-level bindings for effortless interaction.
-                                Designed to empower developers with comprehensive access, Disgord provides unparalleled support for Discord's API endpoints, WebSocket interface, and voice functionality. 
-                                With its nearly complete coverage of all Discord API features, Disgord unlocks limitless possibilities for building dynamic and immersive experiences within the Discord ecosystem. 
-                                Whether you're crafting bots, managing communities, or orchestrating engaging interactions, Disgord empowers you to unleash your creativity with ease and efficiency. Harness the full potential of
-                                Discord integration effortlessly with Disgord.
+                                Dcord is your ultimate solution for seamless integration with the Discord chat client API, offering robust low-level bindings for effortless interaction.
+                                Designed to empower developers with comprehensive access, Dcord provides unparalleled support for Discord's API endpoints, WebSocket interface, and voice functionality. 
+                                With its nearly complete coverage of all Discord API features, Dcord unlocks limitless possibilities for building dynamic and immersive experiences within the Discord ecosystem. 
+                                Whether you're crafting bots, managing communities, or orchestrating engaging interactions, Dcord empowers you to unleash your creativity with ease and efficiency. Harness the full potential of
+                                Discord integration effortlessly with Dcord.
                             </h1>
                         </div>
                     </div>
