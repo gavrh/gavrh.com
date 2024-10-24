@@ -103,7 +103,7 @@ export default function WebApp({ _props }: any) {
                                 </span>
                                 <h1>TypeScript, Golang, C/C++, Rust, PSQL, Java, Ziglang, Elixir,</h1>
                                 <h1>Docker, Node.js, React, Git, AWS, Make/CMakefile,</h1>
-                                <h1>Web & Desktop Aplications, APIs, WebSockets, Databases,</h1>
+                                <h1>Web & Desktop Applications, APIs, WebSockets, Databases,</h1>
                                 <h1>PL & OS Development</h1>
                                 {/* other skills */}
                                 <span className='text-emerald-600 font-bold text-2xl mt-[20px]'>
@@ -119,7 +119,7 @@ export default function WebApp({ _props }: any) {
                                     <span className='font-semibold text-white'>about_me</span>
                                 </span>
                                 <h1>
-                                    I'm an 18-year-old currently pursuing a Bachelor's degree in
+                                    I'm an 19-year-old currently pursuing a Bachelor's degree in
                                     Computer Science. Coding is not just a part of my academic
                                     journey but a genuine passion. Outside of the tech world, I
                                     have a deep love for animals and a strong appreciation for
