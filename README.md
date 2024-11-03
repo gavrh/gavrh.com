@@ -1,1 +1,1 @@
-# [gav.codes](https://gav.codes)
+# [grh.lol](https://grh.lol)
