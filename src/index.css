@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* add font family soon */
 html, body {
   width: 100%;
   height: 100%;
