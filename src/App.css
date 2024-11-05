@@ -12,7 +12,7 @@ select:-webkit-autofill:focus {
 }
 
 body {
-  background-color: #121212;
+  background-color: #191919;
   padding-bottom: env(safe-area-inset-bottom);
 }
 

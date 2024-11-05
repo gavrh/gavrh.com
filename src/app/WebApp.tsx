@@ -28,26 +28,26 @@ export default function WebApp({ props }: any) {
                 hover:no-underline 
                 hover:cursor-pointer 
                 w-full 
-                max-w-[450px] 
+                max-w-[454px] 
                 h-[150px] 
                 rounded-[5px] 
                 mt-[20px] 
                 shadow-[0_0px_10px_0px] 
                 shadow-[#060606] 
-                hover:shadow-emerald-800 
+                hover:shadow-emerald-700 
                 hover:shadow-[0_0px_14px_0px] 
-                hover:border-emerald-800 
+                hover:border-emerald-700 
                 transition-all duration-200' 
             style={{
                 margin: `20px ${count%2!=0 ? '10px' : '0'} 0 ${count%2==0 ? '10px' : '0'}`
             }}
             key={index} target='_blank' href={repo.html_url}>
             {/* wrapper */}
-            <div className='flex flex-col w-full h-full px-[20px] py-[12px]'>
+            <div className='flex flex-col w-full h-full px-[20px] py-[15px]'>
                 {/* repo name */}
                 <h1 className='text-zinc-200 text-2xl font-bold tracking-wide'>{repo.name}</h1>
                 {/* repo description */}
-                <h1 className='line-clamp-2 text-[17px] overflow-hidden mt-[6px] h-[45%] text-zinc-400 '>{repo.description}</h1>
+                <h1 className='line-clamp-2 text-[17px] overflow-hidden mt-[4px] h-[45%] text-zinc-400 '>{repo.description}</h1>
                 {/* language / stars / forks */}
                 <div className='flex flex-1 font-semibold'>
                     {/* language */}
@@ -86,7 +86,7 @@ export default function WebApp({ props }: any) {
                     </div>
                 </div> */}
                 {/* right */}
-                <div className="border-[1px] border-blue-500 flex max-w-[950px] w-full justify-center">
+                <div className=" flex max-w-[950px] w-full justify-center">
                     <div className='flex flex-wrap max-h-[250px] justify-center mx-[10px]'>
                         {repos}
                     </div>
