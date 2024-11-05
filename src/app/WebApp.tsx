@@ -23,21 +23,21 @@ export default function WebApp({ props }: any) {
         return (
         <a 
             className='
-                border-[1px] 
-                border-[#141414] 
-                hover:no-underline 
-                hover:cursor-pointer 
-                w-full 
-                max-w-[454px] 
-                h-[150px] 
-                rounded-[5px] 
-                mt-[20px] 
-                shadow-[0_0px_10px_0px] 
-                shadow-[#060606] 
-                hover:shadow-emerald-700 
-                hover:shadow-[0_0px_14px_0px] 
-                hover:border-emerald-700 
-                transition-all duration-200' 
+                border-[1px]
+                border-[#141414]
+                hover:no-underline
+                hover:cursor-pointer
+                w-full
+                max-w-[454px]
+                h-[150px]
+                rounded-[5px]
+                mt-[20px]
+                shadow-[0_0px_10px_0px]
+                shadow-[#060606]
+                hover:shadow-emerald-700
+                hover:shadow-[0_0px_14px_0px]
+                hover:border-emerald-700
+                transition-all duration-200'
             style={{
                 margin: `20px ${count%2!=0 ? '10px' : '0'} 0 ${count%2==0 ? '10px' : '0'}`
             }}
