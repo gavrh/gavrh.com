@@ -12,15 +12,13 @@ export default function App() {
         </h1>
         <h1>Software Engineer</h1>
       </Section>
-      {/* what i do */}
-      <Section></Section>
-      {/* what i do */}
+      {/* about me */}
       <Section></Section>
       {/* technologies */}
       <Section></Section>
-      {/* technologies */}
+      {/* experience */}
       <Section></Section>
-      {/* technologies */}
+      {/* projects */}
       <Section></Section>
     </AppContainer>
   );
