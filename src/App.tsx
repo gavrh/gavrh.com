@@ -34,7 +34,6 @@ const AppContainer = tw.div`
   flex-col
   justify-center
   items-center
-  overflow-y-scroll
   border-[1px]
   border-red-500
 `
