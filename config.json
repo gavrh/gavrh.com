@@ -1,0 +1,15 @@
+{
+    "full_name": "Gavin Holmes",
+    "title": "Software Engineer",
+    "birth_date": {
+        "date": "27",
+        "month": "05",
+        "year": "2005"
+    },
+    "socials": {
+        "email": "hey@gav.codes",
+        "linkedin": "gavrh",
+        "twitter": "",
+        "github": "gavrh"
+    }
+}
