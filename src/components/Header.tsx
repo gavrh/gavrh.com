@@ -54,8 +54,6 @@ const HeaderContainer = tw.div`
 const HeaderLeft = tw.div`
     w-full
     h-full
-
-    border-pink-500
 `
 
 const HeaderRight = tw.div`
@@ -77,7 +75,7 @@ const IconButton = tw.a`
     child:h-[25px]
     child:text-gray-400
     child:transition-all
-    child:duration-200
+    child:duration-150
     child:ease-in-out
     
     hover:child:text-gray-300
