@@ -1,9 +1,13 @@
 import React from 'react';
 import tw from 'tailwind-styled-components';
+import ContactModal from './components/ContactModal';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
 export default function App() {
+
+  // states
+  const [modalActive, setModalActive] = React.useState(false);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,9 +21,15 @@ export default function App() {
   console.log(process.env.REACT_APP_WEBHOOK_URL);
 
   return (
+    <>
+    {/* contact */}
+    <ContactModal modalActive={modalActive} setModalActive={setModalActive} />
+
+    {/* app */}
     <AppContainer>
+      
       {/* header */}
-      <Header />
+      <Header setModalActive={setModalActive} />
       {/* profile */}
       <Section className='mt-[50px]'>
         <h1>
@@ -66,6 +76,7 @@ export default function App() {
       {/* footer */}
       <Footer />
     </AppContainer>
+    </>
   );
 }
 

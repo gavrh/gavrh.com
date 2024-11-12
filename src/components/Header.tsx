@@ -8,6 +8,14 @@ import {
 
 export default function Header(props: any) {
 
+    // props
+    const {setModalActive} = props;
+
+    // functions
+    const handleContactButton = (e: any) => {
+        e.preventDefault();
+        setModalActive(true);
+    }
 
     return (
         <HeaderContainer>
@@ -28,7 +36,7 @@ export default function Header(props: any) {
                     <SiLinkedin />
                 </IconButton>
                 {/* contact */}
-                <ContactButton>
+                <ContactButton onClick={handleContactButton}>
                     CONTACT
                 </ContactButton>
             </HeaderRight>
