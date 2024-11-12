@@ -18,7 +18,6 @@ export default function App() {
   };
 
   console.log(process.env.REACT_APP_TURNSTILE_SITE_KEY)
-  console.log(process.env.REACT_APP_WEBHOOK_URL);
 
   return (
     <>
@@ -71,7 +70,7 @@ export default function App() {
         <input type="text" placeholder="Enter email" />
         <input type="text" placeholder="I want to hire you!" />
         <button type="submit">Send</button>
-        <div className="cf-turnstile" data-sitekey={process.env.REACT_APP_TURNSTILE_SITE_KEY}/> 
+        <div className="cf-turnstile" data-sitekey={process.env.REACT_APP_TURNSTILE_SITE_KEY as string}/> 
       </form>
       {/* footer */}
       <Footer />

@@ -9,10 +9,13 @@ export default function Backdrop(props: any) {
 
     return (
         <motion.div 
-            onClick={(e) => {e.preventDefault(); setModalActive(false)}}
+            onClick={(e) => {setModalActive(false);}}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{
+                duration: 0.4
+            }}
             className='
                 fixed
                 top-0
