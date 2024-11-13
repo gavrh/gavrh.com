@@ -26,7 +26,6 @@ export default function App() {
 
     {/* app */}
     <AppContainer>
-      
       {/* header */}
       <Header setModalActive={setModalActive} />
       {/* profile */}

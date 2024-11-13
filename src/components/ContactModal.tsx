@@ -76,17 +76,17 @@ export default function ContactModal(props: any) {
     };
 
     // handle no scroll
-    // React.useEffect(() => {
-    //     const handleNoScroll = (e: WheelEvent) => {
-    //         if (modalActive) {
-    //             e.preventDefault();
-    //         }
-    //     }
-    //     window.addEventListener('wheel', handleNoScroll, { passive: false });
-    //     return () => {
-    //         window.removeEventListener('wheel', handleNoScroll);
-    //     }
-    // }, [modalActive])
+    React.useEffect(() => {
+        const handleNoScroll = (e: WheelEvent) => {
+            if (modalActive) {
+                e.preventDefault();
+            }
+        }
+        window.addEventListener('wheel', handleNoScroll, { passive: false });
+        return () => {
+            window.removeEventListener('wheel', handleNoScroll);
+        }
+    }, [modalActive])
 
     return (
         <AnimatePresence>
@@ -114,7 +114,7 @@ export default function ContactModal(props: any) {
                         <ContactItemTitle>Message</ContactItemTitle>
                         <ContactTextArea
                             className='flex-1'
-                            maxLength={1500}
+                            maxLength={800}
                             placeholder='Hey Gavin, I want to hire you!'
                         />
                         {/* send button */}
