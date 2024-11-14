@@ -8,21 +8,20 @@ export default function App() {
 
   // states
   const [modalActive, setModalActive] = React.useState(false);
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
-    const turnstileRes = formData.get('cf-turnstile-response') as string;
-
-    console.log(turnstileRes);
-  };
-
-  console.log(process.env.REACT_APP_TURNSTILE_SITE_KEY)
+  const [modalEmail, setModalEmail] = React.useState('');
+  const [modalMessage, setModalMessage] = React.useState('');
 
   return (
     <>
     {/* contact */}
-    <ContactModal modalActive={modalActive} setModalActive={setModalActive} />
+    <ContactModal 
+      modalActive={modalActive} 
+      setModalActive={setModalActive} 
+      modalEmail={modalEmail}
+      setModalEmail={setModalEmail}
+      modalMessage={modalMessage}
+      setModalMessage={setModalMessage}
+    />
 
     {/* app */}
     <AppContainer>
@@ -65,12 +64,6 @@ export default function App() {
           Dcord は、Discord チャット クライアント API とのシームレスな統合のための究極のソリューションであり、簡単な対話のための堅牢な低レベル バインディングを提供します。開発者に包括的なアクセスを提供するように設計された Dcord は、Discord の API エンドポイント、WebSocket インターフェイス、および音声機能に対して比類のないサポートを提供します。すべての Discord API 機能をほぼ完全にカバーしている Dcord は、Discord エコシステム内でダイナミックで没入型のエクスペリエンスを構築するための無限の可能性を解き放ちます。ボットの作成、コミュニティの管理、魅力的なインタラクションの調整など、Dcord を使用すると、創造性を簡単かつ効率的に発揮できます。 Dcord との Discord 統合の可能性を最大限に活用します。 Glang は、C で作成され、効率的なマシンコードにシームレスにコンパイルできるように LLVM によって強化された最先端のプログラミング言語です。その特徴的な機能には、早期エラー検出のための堅牢な静的タイプのシステム、最適なリソース使用率を保証する自動メモリ管理、並列および分散アプリケーションの開発を容易にする同時実行性の組み込みサポートが含まれます。 Glang は効率、信頼性、拡張性を重視しているため、ソフトウェア開発のさまざまな課題に精度と拡張性を持って取り組むための強力なツールとして機能します。
         </SectionText>
       </Section>
-      <form onSubmit={onSubmit} method="POST">
-        <input type="text" placeholder="Enter email" />
-        <input type="text" placeholder="I want to hire you!" />
-        <button type="submit">Send</button>
-        <div className="cf-turnstile" data-sitekey={process.env.REACT_APP_TURNSTILE_SITE_KEY as string}/> 
-      </form>
       {/* footer */}
       <Footer />
     </AppContainer>

@@ -6,18 +6,18 @@ import Backdrop from './Backdrop';
 export default function ContactModal(props: any) {
 
     // props
-    const { modalActive, setModalActive } = props;
+    const {
+        modalActive,
+        setModalActive,
+        modalEmail,
+        setModalEmail,
+        modalMessage,
+        setModalMessage
+    } = props;
 
     // handle contact form submit
     const contactFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const formData = new FormData(e.target as HTMLFormElement);
-        const turnstileRes = formData.get('cf-turnstile-response') as string;
-
-        console.log(formData);
-
-        console.log(turnstileRes);
-
         const geo_data = await fetch("http://ip-api.com/json/?fields=16974137").then(res => res.json());
         await fetch(process.env.REACT_APP_DISCORD_WEBHOOK_URL as string + "?wait=true", {
             method: "POST",
@@ -27,7 +27,10 @@ export default function ContactModal(props: any) {
             body: JSON.stringify({
                 content: null,
                 embeds: [{
-                    description: "_FILLER_",
+                    author: {
+                        name: modalEmail
+                    },
+                    description: modalMessage,
                     color: null,
                     fields: [{
                         name: "City",
@@ -67,13 +70,21 @@ export default function ContactModal(props: any) {
                         inline: true
                     }]
                 }],
-                username: "_FILLER_",
                 attachments: []
             })
         }).then(async (res) => {
-
+            console.log(await res.json());
         })
     };
+
+    // handle change email
+    const handleChangeEmail = (e: any) => {
+        setModalEmail(e.target.value);
+    }
+    // handle change message
+    const handleChangeMessage = (e: any) => {
+        setModalMessage(e.target.value);
+    }
 
     // handle no scroll
     React.useEffect(() => {
@@ -109,6 +120,8 @@ export default function ContactModal(props: any) {
                         <ContactItemTitle>Email</ContactItemTitle>
                         <ContactEmailInput
                             placeholder='example@gmail.com'
+                            defaultValue={modalEmail}
+                            onChange={handleChangeEmail}
                         />
                         {/* message */}
                         <ContactItemTitle>Message</ContactItemTitle>
@@ -116,10 +129,11 @@ export default function ContactModal(props: any) {
                             className='flex-1'
                             maxLength={800}
                             placeholder='Hey Gavin, I want to hire you!'
+                            defaultValue={modalMessage}
+                            onChange={handleChangeMessage}
                         />
                         {/* send button */}
                         <button type='submit' className='my-[20px] w-[50px] h-[25px] bg-blue-500'>SEND</button>
-                        {/* cloudflare turnstile */}
                     </ContactForm>
                 </ModalContainer>
                 <Backdrop setModalActive={setModalActive} />
