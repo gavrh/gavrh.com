@@ -37,7 +37,7 @@ export default function Header(props: any) {
                 </IconButton>
                 {/* contact */}
                 <ContactButton onClick={handleContactButton}>
-                    CONTACT
+                    Contact
                 </ContactButton>
             </HeaderRight>
         </HeaderContainer>
@@ -83,13 +83,29 @@ const IconButton = tw.a`
     child:h-[25px]
     child:text-gray-400
     child:transition-all
-    child:duration-150
+    child:duration-300
     child:ease-in-out
     
     hover:child:text-gray-300
 `
 
 const ContactButton = tw.button`
+    bg-emerald-600
+    bg-opacity-40
     border-[1px]
-    border-emerald-600
+    border-emerald-500
+    py-[5px]
+    px-[10px]
+    rounded-lg
+    text-gray-300
+    font-semibold
+
+    transition-all
+    duration-300
+
+    hover:bg-opacity-70
+    hover:border-bg-emerald-400
+    hover:text-gray-200
+
+    active:bg-opacity-90
 `
