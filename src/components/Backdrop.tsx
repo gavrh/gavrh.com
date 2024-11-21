@@ -1,5 +1,4 @@
 import React from 'react';
-import tw from 'tailwind-styled-components';
 import { motion } from 'framer-motion';
 
 export default function Backdrop(props: any) {
