@@ -1,6 +1,7 @@
 import React from 'react';
 import tw from 'tailwind-styled-components';
 import ContactModal from './components/ContactModal';
+import Technologies from './components/Technologies';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -43,8 +44,11 @@ export default function App() {
           Technologies
         </SectionTitle>
         <SectionText>
-          TECHNOLOGIES_TEXT 私は開発プロセスを合理化し、コードとプロジェクトの両方の品質を向上させるためにさまざまなツールを使用しています。以下は、私が過去に経験した、または現在使用しているテクノロジーと言語のリストです。
+          I use a variety of tools to streamline my development process and increase the
+          quality of both my code, and my projects. Below is a list of technologies and
+          languages I've had experience with in the past, or am currently using.
         </SectionText>
+        <Technologies />
       </Section>
       {/* experience */}
       <Section>
@@ -89,11 +93,12 @@ const Section = tw.div`
 
 const SectionTitle = tw.h1`
   text-gray-200
-  text-3xl
+  text-2xl
   font-semibold
 `
 
 const SectionText = tw.p`
   mt-[5px]
   text-gray-400
+  text-lg
 `
