@@ -3,15 +3,16 @@
 @tailwind utilities;
 
 /* add font family soon */
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
@@ -19,25 +20,25 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: white;
-  transition: background-color 5000s ease-in-out 0s;
+	-webkit-text-fill-color: white;
+	transition: background-color 5000s ease-in-out 0s;
 }
 
 body {
-  padding-bottom: env(safe-area-inset-bottom);
+	padding-bottom: env(safe-area-inset-bottom);
 }
 
 ::selection {
-  background: rgba(5,150,105,0.5); /* WebKit/Blink Browsers */
+	background: rgba(5, 150, 105, 0.5); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: rgba(5,150,105,0.5); /* Gecko Browsers */
+	background: rgba(5, 150, 105, 0.5); /* Gecko Browsers */
 }
 a {
-  color: rgb(110,231,169)
+	color: rgb(110, 231, 169);
 }
 a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* ::-webkit-scrollbar {
@@ -57,3 +58,11 @@ a:hover {
   border-color: #242423;
   border-radius: 50px
 } */
+
+.dark .tippy-tooltip-content {
+    color: #fff
+}
+
+.tippy-tooltip-content {
+    color: #000
+}
