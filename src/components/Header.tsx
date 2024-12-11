@@ -6,9 +6,9 @@ import { SiGithub, SiTwitter, SiLinkedin } from 'react-icons/si';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
-function Social(props: { name: string, url: string, blank: boolean,  Icon: IconType }) {
+function Social(props: { name: string, url: string,  Icon: IconType }) {
 
-    const {name, url, blank, Icon} = props;
+    const {name, url, Icon} = props;
 
     return (
         <Tooltip 
@@ -20,7 +20,7 @@ function Social(props: { name: string, url: string, blank: boolean,  Icon: IconT
             unmountHTMLWhenHide={true}
             html={<h1 className="bg-[#282f3b] rounded-lg text-gray-400 font-semibold px-[12px] p-[5px] mt-[8px]">{name}</h1>}
         >
-            <IconButton href={url} target={blank ? "_blank" : ""}>
+            <IconButton href={url} target="_blank">
                 <Icon />
             </IconButton>
         </Tooltip>
@@ -42,13 +42,13 @@ export default function Header() {
             </HeaderLeft>
 			<HeaderRight>
 				{/* github */}
-                <Social name="Github" url="https://github.com/gavrh" blank={true} Icon={SiGithub} />
+                <Social name="Github" url="https://github.com/gavrh" Icon={SiGithub} />
 				{/* twitter */}
-                <Social name="Twitter" url="https://x.com/gavholm" blank={true} Icon={SiTwitter} />
+                <Social name="Twitter" url="https://x.com/gavholm" Icon={SiTwitter} />
 				{/* linkedin */}
-                <Social name="LinkedIn" url="https://linkedin.com/in/gavrh" blank={true} Icon={SiLinkedin} />
+                <Social name="LinkedIn" url="https://linkedin.com/in/gavrh" Icon={SiLinkedin} />
 				{/* email */}
-                <Social name="Email" url="mailto:hey@gav.codes" blank={false} Icon={HiOutlineMail} />
+                <Social name="Email" url="mailto:hey@gav.codes" Icon={HiOutlineMail} />
 			</HeaderRight>
 		</HeaderContainer>
 	);
