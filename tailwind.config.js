@@ -3,9 +3,6 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				'primary-bg': '#242423 ',
-				'secondary-bg': '#20201F',
-				'tertiary-bg': '#1a1a19'
 			},
 			height: {
 				'32rem': '32rem',
@@ -18,7 +15,10 @@ module.exports = {
 			},
 			boxShadow: {
 				bottom: '0px 3px 8px 0px rgb(0 0 0 / 0.2)'
-			}
+			},
+            screens: {
+                'icon-wrap': '798px'
+            }
 		}
 	},
 	plugins: [

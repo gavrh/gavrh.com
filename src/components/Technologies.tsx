@@ -10,16 +10,16 @@ import {
     SiDocker,
     SiZig,
     SiC,
+    SiCmake,
     SiReact,
     SiTauri,
-    SiTailwindcss,
     SiPostgresql,
     SiNeovim,
     SiLua,
     SiGnubash,
     SiRaspberrypi,
+    SiOpengl,
     SiLlvm,
-    SiElixir
 } from 'react-icons/si';
 
 function Technology(props: { name: string, Icon: IconType }) {
@@ -34,11 +34,9 @@ function Technology(props: { name: string, Icon: IconType }) {
             hideOnClick={false}
             duration={200}
             unmountHTMLWhenHide={true}
-            html={<h1 className="bg-[#1f252e] rounded-lg text-gray-400 font-semibold px-[12px] p-[5px] mb-[10px]">{name}</h1>}
+            html={<h1 className="bg-[#282f3b] rounded-lg text-gray-400 font-semibold px-[12px] p-[5px] mb-[8px]">{name}</h1>}
         >
-            <div>
-                <Icon className="min-h-[22px] min-w-[22px]" />
-            </div>
+            <Icon className="min-h-[22px] min-w-[22px]" />
         </Tooltip>
     )
 }
@@ -52,18 +50,18 @@ export default function Technologies() {
             <Technology name="Typescript" Icon={SiTypescript} />
             <Technology name="Zig" Icon={SiZig} />
             <Technology name="C/C++" Icon={SiC} />
+            <Technology name="CMake" Icon={SiCmake} />
             <Technology name="Git" Icon={SiGit} />
             <Technology name="Docker" Icon={SiDocker} />
             <Technology name="React" Icon={SiReact} />
             <Technology name="Tauri" Icon={SiTauri} />
-            <Technology name="TailwindCSS" Icon={SiTailwindcss} />
             <Technology name="PostgreSQL" Icon={SiPostgresql} />
             <Technology name="NeoVim" Icon={SiNeovim} />
             <Technology name="Lua" Icon={SiLua} />
             <Technology name="Bash" Icon={SiGnubash} />
             <Technology name="Raspberry Pi" Icon={SiRaspberrypi} />
+            <Technology name="OpenGL" Icon={SiOpengl} />
             <Technology name="LLVM" Icon={SiLlvm} />
-            <Technology name="Elixir" Icon={SiElixir} />
         </TechnologiesContainer>
     )
 }
@@ -73,7 +71,7 @@ const TechnologiesContainer = tw.div`
     flex
     flex-wrap
     justify-center
-    mt-[10px]
+    mt-[15px]
     py-[5px]
     px-[1px]
     bg-[#1f252e]
@@ -81,6 +79,9 @@ const TechnologiesContainer = tw.div`
     border-[1px]
     border-[#1f252e]
     rounded-lg
-    child:mx-[10px]
+    child:icon-wrap:mx-[10px]
+    child:mx-[13px]
     child:my-[10px]
+    child:transition-none
+    child:duration-0
 `

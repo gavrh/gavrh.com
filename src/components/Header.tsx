@@ -1,40 +1,54 @@
 import React from 'react';
 import tw from 'tailwind-styled-components';
-import { SiGithub, SiX, SiLinkedin } from 'react-icons/si';
+import { Tooltip } from 'react-tippy';
+import { IconType } from 'react-icons';
+import { SiGithub, SiTwitter, SiLinkedin } from 'react-icons/si';
+import { HiOutlineMail } from 'react-icons/hi';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
-export default function Header(props: any) {
-	// props
-	const { setModalActive } = props;
+function Social(props: { name: string, url: string, blank: boolean,  Icon: IconType }) {
 
-	// functions
-	const handleContactButton = (e: any) => {
-		e.preventDefault();
-		setModalActive(true);
-	};
+    const {name, url, blank, Icon} = props;
+
+    return (
+        <Tooltip 
+            className="transition-all duration-200"
+            position="bottom"
+            trigger="mouseenter"
+            hideOnClick={true}
+            duration={200}
+            unmountHTMLWhenHide={true}
+            html={<h1 className="bg-[#282f3b] rounded-lg text-gray-400 font-semibold px-[12px] p-[5px] mt-[8px]">{name}</h1>}
+        >
+            <IconButton href={url} target={blank ? "_blank" : ""}>
+                <Icon />
+            </IconButton>
+        </Tooltip>
+    )
+}
+
+export default function Header() {
+    
+    // temp hard coded
+    const theme = "dark";
+    const ThemeIcon = theme == "dark" ? FiMoon : FiSun;
 
 	return (
 		<HeaderContainer>
-			<HeaderLeft></HeaderLeft>
+			<HeaderLeft>
+                <ThemeButton>
+                    <ThemeIcon />
+                </ThemeButton>
+            </HeaderLeft>
 			<HeaderRight>
 				{/* github */}
-				<IconButton href="https://github.com/gavrh" target="_blank">
-					<SiGithub />
-				</IconButton>
+                <Social name="Github" url="https://github.com/gavrh" blank={true} Icon={SiGithub} />
 				{/* twitter */}
-				<IconButton href="https://x.com/gavholm" target="_blank">
-					<SiX />
-				</IconButton>
+                <Social name="Twitter" url="https://x.com/gavholm" blank={true} Icon={SiTwitter} />
 				{/* linkedin */}
-				<IconButton
-					href="https://linkedin.com/in/gavrh"
-					target="_blank"
-				>
-					<SiLinkedin />
-				</IconButton>
-				{/* contact */}
-				<ContactButton onClick={handleContactButton}>
-					Contact
-				</ContactButton>
+                <Social name="LinkedIn" url="https://linkedin.com/in/gavrh" blank={true} Icon={SiLinkedin} />
+				{/* email */}
+                <Social name="Email" url="mailto:hey@gav.codes" blank={false} Icon={HiOutlineMail} />
 			</HeaderRight>
 		</HeaderContainer>
 	);
@@ -46,18 +60,23 @@ const HeaderContainer = tw.div`
     h-[50px]
     flex
     sticky
+    z-[99]
     top-[25px]
     bg-[#1f252e]
     bg-opacity-40
     border-[1px]
     border-[#1f252e]
     rounded-lg
-    backdrop-blur
+    backdrop-blur-lg
 `;
 
 const HeaderLeft = tw.div`
     w-full
     h-full
+    flex
+    justify-begin
+    items-center
+    first:ml-[8px]
 `;
 
 const HeaderRight = tw.div`
@@ -85,23 +104,24 @@ const IconButton = tw.a`
     hover:child:text-gray-300
 `;
 
-const ContactButton = tw.button`
-    bg-emerald-600
-    bg-opacity-40
-    border-[1px]
-    border-emerald-500
-    py-[5px]
-    px-[10px]
+const ThemeButton = tw.button`
+    flex
+    justify-center
+    items-center
+    w-[35px]
+    h-[35px]
     rounded-lg
-    text-gray-300
-    font-semibold
+    p-[5px]
+
+    child:w-[25px]
+    child:h-[25px]
+    child:text-gray-400
+    child:transition-all
+    child:duration-200
+    child:ease-in-out
+
+    hover:bg-[#282f3b]
 
     transition-all
     duration-200
-
-    hover:bg-opacity-70
-    hover:border-bg-emerald-400
-    hover:text-gray-200
-
-    active:bg-opacity-90
-`;
+`
