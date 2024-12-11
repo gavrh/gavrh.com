@@ -44,7 +44,7 @@ export default function App() {
             <Section>
                 <SectionTitle>Experience</SectionTitle>
                 <SectionText>
-                    EXPEREIENCE_TEXT
+                    {ExperienceText}
                 </SectionText>
                 <Experiences />
             </Section>
@@ -66,9 +66,10 @@ const TechnologiesText = `
     I use a variety of tools to streamline my development
     process and increase the quality of both my code, and my
     projects. Below is a list of technologies and languages
-    I've had experience with in the past, or am currently
-    using.
-`
+    I have the most  experience with either currently, or in the past.
+`;
+
+const ExperienceText = `EXPERIENCE_TEXT`;
 
 // app styled components
 const AppContainer = tw.div`
