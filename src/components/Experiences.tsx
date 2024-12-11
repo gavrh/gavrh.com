@@ -35,10 +35,8 @@ export default function Experiences() {
                 time="Apr 2023 - present"
                 bio={`
                     Experienced Computer Science Tutor with over a year of dedicated teaching across diverse age groups,
-                    from kids to college students. Specializing in creating interactive and personalized learning experiences,
-                    I adapt teaching methods to suit individual learning styles and needs. Through one-on-one and small group sessions,
-                    I foster a supportive environment where students feel empowered to explore computer science concepts
-                    and cultivate a passion for technology.
+                    from kids to college students. Through one-on-one and small group sessions, I foster a supportive environment
+                    where students feel empowered to explore computer science concepts and cultivate a passion for technology.
                 `}
                 bioShort={`
                     Experienced Computer Science Tutor with over a year of dedicated teaching across diverse age groups,
@@ -54,9 +52,7 @@ export default function Experiences() {
                 bio={`
                     I've thrived as a freelance software engineer, collaborating with diverse clients to develop customized,
                     scalable solutions. My role encompasses fullstack development, bug fixing, and effective project management,
-                    showcasing my ability to handle multiple projects and meet tight deadlines. This experience has not only enhanced
-                    my technical proficiency but also honed my communication skills and adaptability in a dynamic freelance environment.
-                    I take pride in delivering innovative solutions that exceed client expectations while staying abreast of industry trends.
+                    showcasing my ability to handle multiple projects and meet tight deadlines.
                 `}
                 bioShort={`
                     I've thrived as a freelance software engineer, collaborating with diverse clients to develop customized,
