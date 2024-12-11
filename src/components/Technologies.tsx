@@ -80,7 +80,8 @@ const TechnologiesContainer = tw.div`
     border-[#1f252e]
     rounded-lg
     child:icon-wrap:mx-[10px]
-    child:mx-[13px]
+    child:sm:mx-[13px]
+    child:mx-[12px]
     child:my-[10px]
     child:transition-none
     child:duration-0

@@ -17,10 +17,13 @@ export default function App() {
             <Header />
             {/* profile */}
             <Section className="flex mt-[55px]">
-                <img src={Me} className="md:block hidden object-cover w-[175px] h-[175px] rounded-lg brightness-[90%] mr-[15px]" />
+                <img src={Me} className="md:block hidden object-cover w-[175px] h-[175px] rounded-lg brightness-[90%] mr-[20px]" />
                 <div>
-                    <span className="text-gray-300 text-4xl font-bold">Gavin</span>
-                    <span className="text-gray-500 text-3xl font-semibold">, {age} (he/him)</span>
+                    <div className="flex items-center">
+                        <span className="text-gray-300 text-4xl font-bold">Gavin Holmes</span>
+                        <span className="text-gray-500 text-3xl font-semibold">, {age}</span>
+                        <span className="ml-[6px] text-gray-500 font-semibold text-2xl">(he/him)</span>
+                    </div>
                     <h1 className="mt-[5px] text-gray-400 text-2xl font-semibold">Software Engineer</h1>
                     <h1 className="mt-[5px] text-gray-500 text-xl font-semibold">Bay Area, CA</h1>
                     <div className="md:block hidden">

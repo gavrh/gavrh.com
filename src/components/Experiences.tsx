@@ -3,9 +3,9 @@ import tw from 'tailwind-styled-components';
 import Tutor from '../assets/tutor.png'
 import Fiverr from '../assets/fiverr.jpeg';
 
-function Experience(props: { image: string, position: string, setting: string, time: string, bio: string }) {
+function Experience(props: { image: string, position: string, setting: string, time: string, bio: string, bioShort: string }) {
 
-    const { image, position, setting, time, bio } = props;
+    const { image, position, setting, time, bio, bioShort } = props;
 
     return (
         <ExperienceContainer>
@@ -18,6 +18,7 @@ function Experience(props: { image: string, position: string, setting: string, t
                 </div>
             </div>
             <h1 className="sm:block hidden text-lg text-gray-400 mt-[10px]">{bio}</h1>
+            <h1 className="sm:hidden block text-lg text-gray-400 mt-[10px]">{bioShort}</h1>
         </ExperienceContainer>
     )
 }
@@ -39,6 +40,10 @@ export default function Experiences() {
                     I foster a supportive environment where students feel empowered to explore computer science concepts
                     and cultivate a passion for technology.
                 `}
+                bioShort={`
+                    Experienced Computer Science Tutor with over a year of dedicated teaching across diverse age groups,
+                    from kids to college students.
+                `}
             />
             {/* fiverr freelance */}
             <Experience 
@@ -52,6 +57,10 @@ export default function Experiences() {
                     showcasing my ability to handle multiple projects and meet tight deadlines. This experience has not only enhanced
                     my technical proficiency but also honed my communication skills and adaptability in a dynamic freelance environment.
                     I take pride in delivering innovative solutions that exceed client expectations while staying abreast of industry trends.
+                `}
+                bioShort={`
+                    I've thrived as a freelance software engineer, collaborating with diverse clients to develop customized,
+                    scalable solutions.
                 `}
             />
         </ExperiencesContainer>
