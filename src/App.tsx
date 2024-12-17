@@ -20,7 +20,7 @@ export default function App() {
             <Section className="flex mt-[55px]">
                 <img alt="me" src={Me} className="md:block hidden object-cover w-[175px] h-[175px] rounded-lg brightness-[90%] mr-[20px]" />
                 <div>
-                    <div className="flex items-center">
+                    <div className="flex items-baseline">
                         <span className="text-gray-300 text-4xl font-bold">Gavin Holmes</span>
                         <span className="text-gray-500 text-3xl font-semibold">, {age}</span>
                         <span className="ml-[6px] text-gray-500 font-semibold text-2xl">(he/him)</span>
