@@ -54,7 +54,7 @@ export default function App() {
                 <SectionTitle>Projects</SectionTitle>
                 <SectionText>
                     In my free time, I enjoy creating open source projects on GitHub,
-                    so I can learn from others and share what I know. Below are some of my personal favorite repositories.
+                    so I can learn from others and share what I know. Below are some of my favorite personal projects.
                 </SectionText>
                 <Projects />
             </Section>
