@@ -5,6 +5,7 @@ import Technologies from './components/Technologies';
 import Experiences from './components/Experiences';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Projects from './components/Projects';
 
 export default function App() {
     // constants
@@ -17,7 +18,7 @@ export default function App() {
             <Header />
             {/* profile */}
             <Section className="flex mt-[55px]">
-                <img src={Me} className="md:block hidden object-cover w-[175px] h-[175px] rounded-lg brightness-[90%] mr-[20px]" />
+                <img alt="me" src={Me} className="md:block hidden object-cover w-[175px] h-[175px] rounded-lg brightness-[90%] mr-[20px]" />
                 <div>
                     <div className="flex items-center">
                         <span className="text-gray-300 text-4xl font-bold">Gavin Holmes</span>
@@ -52,8 +53,10 @@ export default function App() {
             <Section>
                 <SectionTitle>Projects</SectionTitle>
                 <SectionText>
-                    coming soon...
+                    In my free time, I enjoy creating open source projects on GitHub,
+                    so I can learn from others and share what I know. Below are some of my personal favorite repositories.
                 </SectionText>
+                <Projects />
             </Section>
             {/* footer */}
             <Footer />

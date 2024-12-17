@@ -31,7 +31,7 @@ export default function Header() {
     
     // temp hard coded
     const theme = "dark";
-    const ThemeIcon = theme == "dark" ? FiMoon : FiSun;
+    const ThemeIcon = theme === "dark" ? FiMoon : FiSun;
 
 	return (
 		<HeaderContainer>
@@ -48,7 +48,7 @@ export default function Header() {
 				{/* linkedin */}
                 <Social name="LinkedIn" url="https://linkedin.com/in/gavrh" Icon={SiLinkedin} />
 				{/* email */}
-                <Social name="Email" url="mailto:hey@gav.codes" Icon={HiOutlineMail} />
+                <Social name="Email" url="mailto:gavin@gav.codes" Icon={HiOutlineMail} />
 			</HeaderRight>
 		</HeaderContainer>
 	);

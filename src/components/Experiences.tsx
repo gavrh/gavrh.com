@@ -10,7 +10,7 @@ function Experience(props: { image: string, position: string, setting: string, t
     return (
         <ExperienceContainer>
             <div className="flex">
-                <img src={image} className="sm:block hidden brightness-[80%] bg-white rounded-lg w-[70px] h-[70px]  mr-[10px]" />
+                <img alt={position} src={image} className="sm:block hidden brightness-[80%] bg-white rounded-lg w-[70px] h-[70px]  mr-[10px]" />
                 <div className="mt-[-4px]">
                     <h1 className="font-semibold text-gray-300 text-xl">{position}</h1>
                     <h1 className="font-semibold text-gray-500">{setting}</h1>
@@ -67,6 +67,7 @@ export default function Experiences() {
 const ExperiencesContainer = tw.div`
     flex
     flex-col
+    mt-[-5px]
 `
 
 const ExperienceContainer = tw.div`
@@ -81,5 +82,4 @@ const ExperienceContainer = tw.div`
     bg-opacity-40
     border-[1px]
     border-[#1f252e]
-    rounded-lg
 `

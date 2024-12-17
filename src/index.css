@@ -34,12 +34,6 @@ body {
 ::-moz-selection {
 	background: rgba(5, 150, 105, 0.5); /* Gecko Browsers */
 }
-a {
-	color: rgb(110, 231, 169);
-}
-a:hover {
-	text-decoration: underline;
-}
 
 /* ::-webkit-scrollbar {
   width: 20px;
