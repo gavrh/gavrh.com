@@ -39,7 +39,7 @@ export default function Header() {
 
 		localStorage.setItem('theme', newTheme);
 		setTheme(newTheme);
-        document.documentElement.style.backgroundColor = (newTheme == "dark" ? "#14181d" : "white")
+        document.documentElement.style.backgroundColor = (newTheme === "dark" ? "#14181d" : "white")
 		newTheme === 'light'
 			? document.querySelector('html')?.classList.remove('dark')
 			: document.querySelector('html')?.classList.add('dark');
