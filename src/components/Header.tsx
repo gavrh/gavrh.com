@@ -54,6 +54,7 @@ export default function Header() {
 				<a
 					href={require('../assets/Gavin_Holmes_Resume.pdf')}
 					target="_blank"
+                    rel="noreferrer"
 				>
                     <HeaderLeftButton>
                         <h1 className="px-[2px] font-semibold">Resume</h1>
