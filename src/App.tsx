@@ -8,61 +8,79 @@ import Footer from './components/Footer';
 import Projects from './components/Projects';
 
 export default function App() {
-    // constants
-    const age = Math.floor((Math.abs(Date.now() - (new Date(2005, 5-1, 27)).getTime()) / (1000 * 3600 * 24)) / 365.25);
+	// constants
+	const age = Math.floor(
+		Math.abs(Date.now() - new Date(2005, 5 - 1, 27).getTime()) /
+			(1000 * 3600 * 24) /
+			365.25
+	);
 
-    // in case search is not default path
-    React.useEffect(() => { window.history.replaceState({}, "", "/") }, [])
+	// in case search is not default path
+	React.useEffect(() => {
+		window.history.replaceState({}, '', '/');
+	}, []);
 
 	return (
-        <AppContainer className="animate-appear">
-
-            {/* header */}
-            <Header />
-            {/* profile */}
-            <Section className="flex mt-[55px]">
-                <img alt="me" src={Me} className="md:block hidden object-cover w-[175px] h-[175px] rounded-lg dark:brightness-[90%] mr-[20px]" />
-                <div>
-                    <div className="flex items-baseline">
-                        <span className="dark:text-gray-300 text-zinc-800 text-4xl font-bold">Gavin Holmes</span>
-                        <span className="dark:text-gray-500 text-zinc-600 text-3xl font-semibold">, {age}</span>
-                        <span className="ml-[6px] dark:text-gray-500 text-zinc-600 font-semibold text-2xl">(he/him)</span>
-                    </div>
-                    <h1 className="mt-[5px] dark:text-gray-400 text-zinc-700 text-2xl font-semibold">Software Engineer</h1>
-                    <h1 className="mt-[5px] dark:text-gray-500 text-zinc-600 text-xl font-semibold">Bay Area, CA</h1>
-                    <div className="md:block hidden">
-                        <SectionText className="italic mt-[10px]">"Never trust a computer you can't throw out a window."</SectionText>
-                        <SectionText className="leading-[15px]">- Steve Wozniak</SectionText>
-                    </div>
-                </div>
-            </Section>
-            {/* technologies */}
-            <Section>
-                <SectionTitle>Technologies</SectionTitle>
-                <SectionText>
-                    {TechnologiesText}
-                </SectionText>
-                <Technologies />
-            </Section>
-            {/* experience */}
-            <Section>
-                <SectionTitle>Experience</SectionTitle>
-                <SectionText>
-                    {ExperienceText}
-                </SectionText>
-                <Experiences />
-            </Section>
-            {/* projects */}
-            <Section>
-                <SectionTitle>Projects</SectionTitle>
-                <SectionText>
-                    {ProjectsText}
-                </SectionText>
-                <Projects />
-            </Section>
-            {/* footer */}
-            <Footer />
-        </AppContainer>
+		<AppContainer className="animate-appear">
+			{/* header */}
+			<Header />
+			{/* profile */}
+			<Section className="flex mt-[55px]">
+				<img
+					alt="me"
+					src={Me}
+					className="md:block hidden object-cover w-[175px] h-[175px] rounded-lg dark:brightness-[90%] mr-[20px]"
+				/>
+				<div>
+					<div className="flex items-baseline">
+						<span className="dark:text-gray-300 text-zinc-800 text-4xl font-bold">
+							Gavin Holmes
+						</span>
+						<span className="dark:text-gray-500 text-zinc-600 text-3xl font-semibold">
+							, {age}
+						</span>
+						<span className="ml-[6px] dark:text-gray-500 text-zinc-600 font-semibold text-2xl">
+							(he/him)
+						</span>
+					</div>
+					<h1 className="mt-[5px] dark:text-gray-400 text-zinc-700 text-2xl font-semibold">
+						Software Engineer
+					</h1>
+					<h1 className="mt-[5px] dark:text-gray-500 text-zinc-600 text-xl font-semibold">
+						Bay Area, CA
+					</h1>
+					<div className="md:block hidden">
+						<SectionText className="italic mt-[10px]">
+							"Never trust a computer you can't throw out a
+							window."
+						</SectionText>
+						<SectionText className="leading-[15px]">
+							- Steve Wozniak
+						</SectionText>
+					</div>
+				</div>
+			</Section>
+			{/* technologies */}
+			<Section>
+				<SectionTitle>Technologies</SectionTitle>
+				<SectionText>{TechnologiesText}</SectionText>
+				<Technologies />
+			</Section>
+			{/* experience */}
+			<Section>
+				<SectionTitle>Experience</SectionTitle>
+				<SectionText>{ExperienceText}</SectionText>
+				<Experiences />
+			</Section>
+			{/* projects */}
+			<Section>
+				<SectionTitle>Projects</SectionTitle>
+				<SectionText>{ProjectsText}</SectionText>
+				<Projects />
+			</Section>
+			{/* footer */}
+			<Footer />
+		</AppContainer>
 	);
 }
 
@@ -117,4 +135,4 @@ const ExperienceText = `
 const ProjectsText = `
     In my free time, I enjoy creating open source projects on GitHub,
     so I can learn from others and share what I know. Below are some of my favorite personal projects.
-`
+`;

@@ -6,76 +6,100 @@ import { SiGithub, SiTwitter, SiLinkedin } from 'react-icons/si';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
-function Social(props: { name: string, url: string,  Icon: IconType }) {
+function Social(props: { name: string; url: string; Icon: IconType }) {
+	const { name, url, Icon } = props;
 
-    const {name, url, Icon} = props;
-
-    return (
-        <Tooltip 
-            className="transition-all duration-200"
-            position="bottom"
-            trigger="mouseenter"
-            hideOnClick={true}
-            duration={200}
-            unmountHTMLWhenHide={true}
-            html={<h1 className="dark:bg-[#282f3b] bg-zinc-300 rounded-lg dark:text-gray-400 text-zinc-600 font-semibold px-[12px] p-[5px] mt-[8px]">{name}</h1>}
-        >
-            <IconButton href={url} target="_blank">
-                <Icon />
-            </IconButton>
-        </Tooltip>
-    )
+	return (
+		<Tooltip
+			className="transition-all duration-200"
+			position="bottom"
+			trigger="mouseenter"
+			hideOnClick={true}
+			duration={200}
+			unmountHTMLWhenHide={true}
+			html={
+				<h1 className="dark:bg-[#282f3b] bg-zinc-300 rounded-lg dark:text-gray-400 text-zinc-600 font-semibold px-[12px] p-[5px] mt-[8px]">
+					{name}
+				</h1>
+			}
+		>
+			<IconButton href={url} target="_blank">
+				<Icon />
+			</IconButton>
+		</Tooltip>
+	);
 }
 
 export default function Header() {
-    
-    const [theme, setTheme] = React.useState("dark");
-    const ThemeIcon = theme === "dark" ? FiMoon : FiSun;
+	const [theme, setTheme] = React.useState('dark');
+	const ThemeIcon = theme === 'dark' ? FiMoon : FiSun;
 
-    const changeTheme = () => {
-        let newTheme = theme === "light" ? "dark" : "light";
+	const changeTheme = () => {
+		let newTheme = theme === 'light' ? 'dark' : 'light';
 
-        localStorage.setItem("theme", newTheme);
-        setTheme(newTheme);
-        newTheme === "light"
-            ? document.querySelector("html")?.classList.remove("dark")
-            : document.querySelector("html")?.classList.add("dark");
-    }
+		localStorage.setItem('theme', newTheme);
+		setTheme(newTheme);
+		newTheme === 'light'
+			? document.querySelector('html')?.classList.remove('dark')
+			: document.querySelector('html')?.classList.add('dark');
+	};
 
-    React.useEffect(() => {
-        let storedTheme = localStorage.getItem("theme") as string;
+	React.useEffect(() => {
+		let storedTheme = localStorage.getItem('theme') as string;
 
-        if (!storedTheme) {
-            localStorage.setItem("theme", window.matchMedia('(prefers-color-scheme: dark)').matches ? "light" : "dark");
-        } else {
-            setTheme(storedTheme);
-            storedTheme === "light"
-                ? document.querySelector("html")?.classList.remove("dark")
-                : document.querySelector("html")?.classList.add("dark");
-        }
-    }, [])
+		if (!storedTheme) {
+			localStorage.setItem(
+				'theme',
+				window.matchMedia('(prefers-color-scheme: dark)').matches
+					? 'light'
+					: 'dark'
+			);
+		} else {
+			setTheme(storedTheme);
+			storedTheme === 'light'
+				? document.querySelector('html')?.classList.remove('dark')
+				: document.querySelector('html')?.classList.add('dark');
+		}
+	}, []);
 
 	return (
 		<HeaderContainer>
 			<HeaderLeft>
-                <HeaderLeftButton onClick={changeTheme}>
-                    <ThemeIcon className="w-[20px] h-[20px]" />
-                </HeaderLeftButton>
-                <HeaderLeftButton href={require("../assets/Gavin_Holmes_Resume.pdf")} target="_blank">
-                    <h1 className="px-[2px] font-semibold">
-                        Resume
-                    </h1>
-                </HeaderLeftButton>
-            </HeaderLeft>
+				<HeaderLeftButton onClick={changeTheme}>
+					<ThemeIcon className="w-[20px] h-[20px]" />
+				</HeaderLeftButton>
+				<HeaderLeftButton
+					href={require('../assets/Gavin_Holmes_Resume.pdf')}
+					target="_blank"
+				>
+					<h1 className="px-[2px] font-semibold">Resume</h1>
+				</HeaderLeftButton>
+			</HeaderLeft>
 			<HeaderRight>
 				{/* github */}
-                <Social name="Github" url="https://github.com/gavrh" Icon={SiGithub} />
+				<Social
+					name="Github"
+					url="https://github.com/gavrh"
+					Icon={SiGithub}
+				/>
 				{/* twitter */}
-                <Social name="Twitter" url="https://x.com/gavholm" Icon={SiTwitter} />
+				<Social
+					name="Twitter"
+					url="https://x.com/gavholm"
+					Icon={SiTwitter}
+				/>
 				{/* linkedin */}
-                <Social name="LinkedIn" url="https://linkedin.com/in/gavrh" Icon={SiLinkedin} />
+				<Social
+					name="LinkedIn"
+					url="https://linkedin.com/in/gavrh"
+					Icon={SiLinkedin}
+				/>
 				{/* email */}
-                <Social name="Email" url="mailto:gavin@gav.codes" Icon={HiOutlineMail} />
+				<Social
+					name="Email"
+					url="mailto:gavin@gav.codes"
+					Icon={HiOutlineMail}
+				/>
 			</HeaderRight>
 		</HeaderContainer>
 	);
@@ -159,4 +183,4 @@ const HeaderLeftButton = tw.a`
 
     transition-all
     duration-200
-`
+`;

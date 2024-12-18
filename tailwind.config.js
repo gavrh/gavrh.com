@@ -1,10 +1,10 @@
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
-    darkMode: "class",
+	darkMode: 'class',
 	theme: {
 		extend: {
 			colors: {
-                'pop': '#1f252e',
+				pop: '#1f252e'
 			},
 			height: {
 				'32rem': '32rem',
@@ -18,22 +18,22 @@ module.exports = {
 			boxShadow: {
 				bottom: '0px 3px 8px 0px rgb(0 0 0 / 0.2)'
 			},
-            screens: {
-                'icon-wrap': '798px'
-            },
-            keyframes: {
-                appear: {
-                    "0%": {
-                        opacity: "0",
-                    },
-                    "100%": {
-                        opacity: "100%",
-                    },
-                }
-            },
-            animation: {
-                appear: "appear 0.75s ease-in-out"
-            }
+			screens: {
+				'icon-wrap': '798px'
+			},
+			keyframes: {
+				appear: {
+					'0%': {
+						opacity: '0'
+					},
+					'100%': {
+						opacity: '100%'
+					}
+				}
+			},
+			animation: {
+				appear: 'appear 0.75s ease-in-out'
+			}
 		}
 	},
 	plugins: [
