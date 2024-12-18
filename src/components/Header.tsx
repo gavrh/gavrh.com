@@ -23,9 +23,11 @@ function Social(props: { name: string; url: string; Icon: IconType }) {
 				</h1>
 			}
 		>
-			<IconButton href={url} target="_blank">
-				<Icon />
-			</IconButton>
+            <a href={url} target="_blank">
+                <IconButton>
+                    <Icon />
+                </IconButton>
+            </a>
 		</Tooltip>
 	);
 }
@@ -129,7 +131,7 @@ const HeaderRight = tw.div`
     last:mr-[8px]
 `;
 
-const IconButton = tw.a`
+const IconButton = tw.button`
     flex
     justify-center
     items-center

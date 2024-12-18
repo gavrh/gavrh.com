@@ -34,7 +34,14 @@ export default function App() {
 				<div>
 					<div className="flex items-baseline">
 						<span className="dark:text-gray-300 text-zinc-800 sm:text-4xl text-3xl font-bold">
-							Gavin Holmes
+							Gavin
+						</span>
+                        <div className="w-[8px]" />
+						<span className="sm:block hidden dark:text-gray-300 text-zinc-800 sm:text-4xl text-3xl font-bold">
+							Holmes
+						</span>
+						<span className="sm:hidden block dark:text-gray-300 text-zinc-800 sm:text-4xl text-3xl font-bold">
+							H
 						</span>
 						<span className="dark:text-gray-500 text-zinc-600 sm:text-3xl text-2xl font-semibold">
 							, {age}
