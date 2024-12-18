@@ -32,7 +32,7 @@ module.exports = {
 				}
 			},
 			animation: {
-				appear: 'appear 0.75s ease-in-out'
+				appear: 'appear 0.5s ease-in-out'
 			}
 		}
 	},

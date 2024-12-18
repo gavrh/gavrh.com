@@ -33,10 +33,10 @@ export default function App() {
 				/>
 				<div>
 					<div className="flex items-baseline">
-						<span className="dark:text-gray-300 text-zinc-800 text-4xl font-bold">
+						<span className="dark:text-gray-300 text-zinc-800 sm:text-4xl text-3xl font-bold">
 							Gavin Holmes
 						</span>
-						<span className="dark:text-gray-500 text-zinc-600 text-3xl font-semibold">
+						<span className="dark:text-gray-500 text-zinc-600 sm:text-3xl text-2xl font-semibold">
 							, {age}
 						</span>
 						<span className="ml-[6px] dark:text-gray-500 text-zinc-600 font-semibold text-2xl">

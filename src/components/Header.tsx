@@ -39,6 +39,7 @@ export default function Header() {
 
 		localStorage.setItem('theme', newTheme);
 		setTheme(newTheme);
+        document.documentElement.style.backgroundColor = (theme == "light" ? "#14181d" : "white")
 		newTheme === 'light'
 			? document.querySelector('html')?.classList.remove('dark')
 			: document.querySelector('html')?.classList.add('dark');
@@ -51,8 +52,8 @@ export default function Header() {
 			localStorage.setItem(
 				'theme',
 				window.matchMedia('(prefers-color-scheme: dark)').matches
-					? 'light'
-					: 'dark'
+					? 'dark'
+					: 'light'
 			);
 		} else {
 			setTheme(storedTheme);

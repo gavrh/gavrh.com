@@ -6,16 +6,25 @@
 		<meta name="theme-color" content="#000000" />
 		<meta
 			name="description"
-			content="I'm an 19-year-old currently pursuing a Bachelor's degree in Computer Science.
-              Coding is not just a part of my academic journey but a genuine passion. Outside of the tech world,
-              I have a deep love for animals and a strong appreciation for music. While I'm not a musician,
-              I find inspiration and relaxation in various genres. I also actively engage in activities
-              supporting animal welfare. This combination of technical interest, compassion for animals,
-              and love for music shapes my well-rounded approach to life."
+			content="i like to make things <3 #skill-issue"
 		/>
 		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<title>Gavin Holmes | Software Engineer</title>
+        <script>
+            // to show proper background color before dom load
+            // and not have twitching colors deciding between
+            // which theme to use
+            let theme = localStorage.getItem("theme");
+            console.log(theme)
+            if (!theme) theme = "dark";
+            document.documentElement.style.backgroundColor = (theme == "dark" ? "#14181d" : "white")
+            if (theme === "light") {
+                document.documentElement.classList.remove('dark')
+            } else {
+                document.documentElement.classList.add('dark')
+            }
+        </script>
 	</head>
 	<body id="https://gav.codes">
 		<noscript>You need to enable JavaScript to run this app.</noscript>
