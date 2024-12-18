@@ -7,7 +7,7 @@ function Project(props: { repo: string, desc: string, lang: string, color: strin
 
     return (
         <ProjectContainer to={`https://github.com/gavrh/${props.repo}`} target="_blank">
-            <h1 className="text-gray-200 font-semibold text-xl">
+            <h1 className="dark:text-gray-300 text-zinc-700 font-semibold text-xl">
                 {props.repo}
             </h1>
             <h1 className="flex-1 my-[5px]">
@@ -87,8 +87,7 @@ const ProjectsContainer = tw.div`
 
 const ProjectContainer = tw(Link)`
     w-full
-    h-[115px]
-    sm:h-[135px]
+    h-[135px]
     flex
     flex-col
     text-start
@@ -96,15 +95,19 @@ const ProjectContainer = tw(Link)`
     py-[10px]
     px-[15px]
     rounded-lg
-    bg-[#1f252e]
+    dark:bg-pop
+    dark:bg-opacity-40
+    bg-zinc-300
     bg-opacity-40
     border-[1px]
-    border-[#1f252e]
+    dark:border-pop
+    border-zinc-300
     
     transition-colors
     duration-200
 
-    hover:border-gray-700
+    hover:dark:border-gray-700
+    hover:border-zinc-400
 `
 const ProjectBottom = tw.div`
     flex

@@ -7,3 +7,5 @@ declare module 'react-tippy' {
         children: ReactNode;
     }
 }
+
+declare module '*.pdf';

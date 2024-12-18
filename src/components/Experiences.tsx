@@ -10,15 +10,15 @@ function Experience(props: { image: string, position: string, setting: string, t
     return (
         <ExperienceContainer>
             <div className="flex">
-                <img alt={position} src={image} className="sm:block hidden brightness-[80%] bg-white rounded-lg w-[70px] h-[70px]  mr-[10px]" />
+                <img alt={position} src={image} className="sm:block hidden dark:brightness-[80%] bg-white rounded-lg w-[70px] h-[70px]  mr-[10px]" />
                 <div className="mt-[-4px]">
-                    <h1 className="font-semibold text-gray-300 text-xl">{position}</h1>
-                    <h1 className="font-semibold text-gray-500">{setting}</h1>
-                    <h1 className="font-semibold text-gray-500">{time}</h1>
+                    <h1 className="font-semibold dark:text-gray-300 text-zinc-700 text-xl">{position}</h1>
+                    <h1 className="font-semibold dark:text-gray-500 text-zinc-500">{setting}</h1>
+                    <h1 className="font-semibold dark:text-gray-500 text-zinc-500">{time}</h1>
                 </div>
             </div>
-            <h1 className="sm:block hidden text-lg text-gray-400 mt-[10px]">{bio}</h1>
-            <h1 className="sm:hidden block text-lg text-gray-400 mt-[10px]">{bioShort}</h1>
+            <h1 className="sm:block hidden text-lg dark:text-gray-400 text-zinc-600 mt-[10px]">{bio}</h1>
+            <h1 className="sm:hidden block text-lg dark:text-gray-400 text-zinc-600 mt-[10px]">{bioShort}</h1>
         </ExperienceContainer>
     )
 }
@@ -78,8 +78,11 @@ const ExperienceContainer = tw.div`
     pb-[20px]
     mt-[20px]
     rounded-lg
-    bg-[#1f252e]
+    dark:bg-pop
+    dark:bg-opacity-40
+    bg-zinc-300
     bg-opacity-40
     border-[1px]
-    border-[#1f252e]
+    dark:border-pop
+    border-zinc-300
 `

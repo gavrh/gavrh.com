@@ -34,9 +34,9 @@ function Technology(props: { name: string, Icon: IconType }) {
             hideOnClick={false}
             duration={200}
             unmountHTMLWhenHide={true}
-            html={<h1 className="bg-[#282f3b] rounded-lg text-gray-400 font-semibold px-[12px] p-[5px] mb-[8px]">{name}</h1>}
+            html={<h1 className="dark:bg-[#292f3b] bg-zinc-300 rounded-lg dark:text-gray-400 text-zinc-600 font-semibold px-[12px] p-[5px] mb-[8px]">{name}</h1>}
         >
-            <Icon className="min-h-[22px] min-w-[22px]" />
+            <Icon className="dark:text-gray-300 text-zinc-700 min-h-[22px] min-w-[22px]" />
         </Tooltip>
     )
 }
@@ -74,10 +74,13 @@ const TechnologiesContainer = tw.div`
     mt-[15px]
     py-[5px]
     px-[1px]
-    bg-[#1f252e]
+    dark:bg-pop
+    bg-zinc-300
+    dark:bg-opacity-40
     bg-opacity-40
     border-[1px]
-    border-[#1f252e]
+    dark:border-pop
+    border-zinc-300
     rounded-lg
     child:icon-wrap:mx-[10px]
     child:sm:mx-[13px]

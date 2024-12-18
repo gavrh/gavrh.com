@@ -18,7 +18,7 @@ function Social(props: { name: string, url: string,  Icon: IconType }) {
             hideOnClick={true}
             duration={200}
             unmountHTMLWhenHide={true}
-            html={<h1 className="bg-[#282f3b] rounded-lg text-gray-400 font-semibold px-[12px] p-[5px] mt-[8px]">{name}</h1>}
+            html={<h1 className="dark:bg-[#282f3b] bg-zinc-300 rounded-lg dark:text-gray-400 text-zinc-600 font-semibold px-[12px] p-[5px] mt-[8px]">{name}</h1>}
         >
             <IconButton href={url} target="_blank">
                 <Icon />
@@ -29,16 +29,43 @@ function Social(props: { name: string, url: string,  Icon: IconType }) {
 
 export default function Header() {
     
-    // temp hard coded
-    const theme = "dark";
+    const [theme, setTheme] = React.useState("dark");
     const ThemeIcon = theme === "dark" ? FiMoon : FiSun;
+
+    const changeTheme = () => {
+        let newTheme = theme === "light" ? "dark" : "light";
+
+        localStorage.setItem("theme", newTheme);
+        setTheme(newTheme);
+        newTheme === "light"
+            ? document.querySelector("html")?.classList.remove("dark")
+            : document.querySelector("html")?.classList.add("dark");
+    }
+
+    React.useEffect(() => {
+        let storedTheme = localStorage.getItem("theme") as string;
+
+        if (!storedTheme) {
+            localStorage.setItem("theme", window.matchMedia('(prefers-color-scheme: dark)').matches ? "light" : "dark");
+        } else {
+            setTheme(storedTheme);
+            storedTheme === "light"
+                ? document.querySelector("html")?.classList.remove("dark")
+                : document.querySelector("html")?.classList.add("dark");
+        }
+    }, [])
 
 	return (
 		<HeaderContainer>
 			<HeaderLeft>
-                <ThemeButton>
-                    <ThemeIcon />
-                </ThemeButton>
+                <HeaderLeftButton onClick={changeTheme}>
+                    <ThemeIcon className="w-[20px] h-[20px]" />
+                </HeaderLeftButton>
+                <HeaderLeftButton href={require("../assets/Gavin_Holmes_Resume.pdf")} target="_blank">
+                    <h1 className="px-[2px] font-semibold">
+                        Resume
+                    </h1>
+                </HeaderLeftButton>
             </HeaderLeft>
 			<HeaderRight>
 				{/* github */}
@@ -62,10 +89,13 @@ const HeaderContainer = tw.div`
     sticky
     z-[99]
     top-[25px]
-    bg-[#1f252e]
+    dark:bg-pop
+    bg-zinc-300
+    dark:bg-opacity-40
     bg-opacity-40
     border-[1px]
-    border-[#1f252e]
+    dark:border-pop
+    border-zinc-300
     rounded-lg
     backdrop-blur-lg
 `;
@@ -96,31 +126,36 @@ const IconButton = tw.a`
 
     child:w-[25px]
     child:h-[25px]
-    child:text-gray-400
+    child:dark:text-gray-400
+    child:text-zinc-600
     child:transition-all
     child:duration-200
     child:ease-in-out
     
-    hover:child:text-gray-300
+    hover:child:dark:text-gray-300
+    hover:child:text-zinc-800
 `;
 
-const ThemeButton = tw.button`
+const HeaderLeftButton = tw.a`
     flex
     justify-center
     items-center
-    w-[35px]
     h-[35px]
     rounded-lg
-    p-[5px]
+    px-[7px]
+    mr-[5px]
 
-    child:w-[25px]
-    child:h-[25px]
-    child:text-gray-400
+    child:dark:text-gray-400
+    child:text-zinc-600
     child:transition-all
     child:duration-200
     child:ease-in-out
 
-    hover:bg-[#282f3b]
+    hover:dark:bg-[#292f3b]
+    hover:dark:bg-opacity-80
+    hover:bg-zinc-300
+    hover:bg-opacity-80
+    hover:cursor-pointer
 
     transition-all
     duration-200
