@@ -23,17 +23,17 @@ function Social(props: { name: string; url: string; Icon: IconType }) {
 				</h1>
 			}
 		>
-            <a href={url} target="_blank">
-                <IconButton>
-                    <Icon />
-                </IconButton>
-            </a>
+			<a href={url} target="_blank" rel="noreferrer">
+				<IconButton>
+					<Icon />
+				</IconButton>
+			</a>
 		</Tooltip>
 	);
 }
 
 export default function Header() {
-	const [theme, setTheme] = React.useState(localStorage.getItem("theme"));
+	const [theme, setTheme] = React.useState(localStorage.getItem('theme'));
 	const ThemeIcon = theme === 'dark' ? FiMoon : FiSun;
 
 	const changeTheme = () => {
@@ -41,7 +41,8 @@ export default function Header() {
 
 		localStorage.setItem('theme', newTheme);
 		setTheme(newTheme);
-        document.documentElement.style.backgroundColor = (newTheme === "dark" ? "#14181d" : "white")
+		document.documentElement.style.backgroundColor =
+			newTheme === 'dark' ? '#14181d' : 'white';
 		newTheme === 'light'
 			? document.querySelector('html')?.classList.remove('dark')
 			: document.querySelector('html')?.classList.add('dark');
@@ -56,11 +57,11 @@ export default function Header() {
 				<a
 					href={require('../assets/Gavin_Holmes_Resume.pdf')}
 					target="_blank"
-                    rel="noreferrer"
+					rel="noreferrer"
 				>
-                    <HeaderLeftButton>
-                        <h1 className="px-[2px] font-semibold">Resume</h1>
-                    </HeaderLeftButton>
+					<HeaderLeftButton>
+						<h1 className="px-[2px] font-semibold">Resume</h1>
+					</HeaderLeftButton>
 				</a>
 			</HeaderLeft>
 			<HeaderRight>

@@ -36,7 +36,7 @@ export default function App() {
 						<span className="dark:text-gray-300 text-zinc-800 sm:text-4xl text-3xl font-bold">
 							Gavin
 						</span>
-                        <div className="w-[8px]" />
+						<div className="w-[8px]" />
 						<span className="sm:block hidden dark:text-gray-300 text-zinc-800 sm:text-4xl text-3xl font-bold">
 							Holmes
 						</span>
