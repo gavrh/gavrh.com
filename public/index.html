@@ -16,8 +16,8 @@
             // and not have twitching colors deciding between
             // which theme to use
             let theme = localStorage.getItem("theme");
-            console.log(theme)
-            if (!theme) theme = "dark";
+            console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
             document.documentElement.style.backgroundColor = (theme == "dark" ? "#14181d" : "white")
             if (theme === "light") {
                 document.documentElement.classList.remove('dark')

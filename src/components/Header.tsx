@@ -31,7 +31,7 @@ function Social(props: { name: string; url: string; Icon: IconType }) {
 }
 
 export default function Header() {
-	const [theme, setTheme] = React.useState('dark');
+	const [theme, setTheme] = React.useState(localStorage.getItem("theme"));
 	const ThemeIcon = theme === 'dark' ? FiMoon : FiSun;
 
 	const changeTheme = () => {
@@ -39,29 +39,11 @@ export default function Header() {
 
 		localStorage.setItem('theme', newTheme);
 		setTheme(newTheme);
-        document.documentElement.style.backgroundColor = (theme == "light" ? "#14181d" : "white")
+        document.documentElement.style.backgroundColor = (newTheme == "dark" ? "#14181d" : "white")
 		newTheme === 'light'
 			? document.querySelector('html')?.classList.remove('dark')
 			: document.querySelector('html')?.classList.add('dark');
 	};
-
-	React.useEffect(() => {
-		let storedTheme = localStorage.getItem('theme') as string;
-
-		if (!storedTheme) {
-			localStorage.setItem(
-				'theme',
-				window.matchMedia('(prefers-color-scheme: dark)').matches
-					? 'dark'
-					: 'light'
-			);
-		} else {
-			setTheme(storedTheme);
-			storedTheme === 'light'
-				? document.querySelector('html')?.classList.remove('dark')
-				: document.querySelector('html')?.classList.add('dark');
-		}
-	}, []);
 
 	return (
 		<HeaderContainer>
@@ -69,12 +51,14 @@ export default function Header() {
 				<HeaderLeftButton onClick={changeTheme}>
 					<ThemeIcon className="w-[20px] h-[20px]" />
 				</HeaderLeftButton>
-				<HeaderLeftButton
+				<a
 					href={require('../assets/Gavin_Holmes_Resume.pdf')}
 					target="_blank"
 				>
-					<h1 className="px-[2px] font-semibold">Resume</h1>
-				</HeaderLeftButton>
+                    <HeaderLeftButton>
+                        <h1 className="px-[2px] font-semibold">Resume</h1>
+                    </HeaderLeftButton>
+				</a>
 			</HeaderLeft>
 			<HeaderRight>
 				{/* github */}
@@ -161,7 +145,7 @@ const IconButton = tw.a`
     hover:child:text-zinc-800
 `;
 
-const HeaderLeftButton = tw.a`
+const HeaderLeftButton = tw.button`
     flex
     justify-center
     items-center
