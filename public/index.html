@@ -16,9 +16,6 @@
 			// and not have twitching colors deciding between
 			// which theme to use
 			let theme = localStorage.getItem('theme');
-			console.log(
-				window.matchMedia('(prefers-color-scheme: dark)').matches
-			);
 			if (!theme) {
 				theme = window.matchMedia('(prefers-color-scheme: dark)')
 					.matches
