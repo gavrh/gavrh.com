@@ -17,10 +17,10 @@
 			// which theme to use
 			let theme = localStorage.getItem('theme');
 			if (!theme) {
-				theme = window.matchMedia('(prefers-color-scheme: dark)')
+				theme = window.matchMedia('(prefers-color-scheme: light)')
 					.matches
-					? 'dark'
-					: 'light';
+					? 'light'
+					: 'dark';
 				localStorage.setItem('theme', theme);
 			}
 			document.documentElement.style.backgroundColor =
