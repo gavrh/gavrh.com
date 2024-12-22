@@ -35,12 +35,12 @@ export default function Projects() {
 	return (
 		<ProjectsContainer>
 			{/* cloak */}
-			<Project
+            {/* <Project
 				repo="cloak"
 				desc="The best alternative Discord client"
 				lang="Rust"
 				color={GithubColors['Rust']}
-			/>
+			/> */}
 			{/* scrapbook */}
 			<Project
 				repo="scrapbook"
@@ -69,13 +69,13 @@ export default function Projects() {
 				lang="Typescript"
 				color={GithubColors['TypeScript']}
 			/>
-			{/* gav.codes */}
-			<Project
+			{/* nvim-config */}
+            {/* <Project
 				repo="nvim-config"
 				desc="My neovim config"
 				lang="Lua"
 				color={GithubColors['Lua']}
-			/>
+			/> */}
 		</ProjectsContainer>
 	);
 }
