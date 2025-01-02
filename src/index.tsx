@@ -7,12 +7,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 createRoot(document.getElementById('root') as HTMLElement).render(
 	<div className="overlfow-y-scroll flex justify-center transition-all duration-200">
 		<Router
-            basename="/"
-            future={{
-                v7_relativeSplatPath: true,
-                v7_startTransition: true,
-            }}
-        >
+			basename="/"
+			future={{
+				v7_relativeSplatPath: true,
+				v7_startTransition: true
+			}}
+		>
 			<Routes>
 				<Route path="*" element={<App />} />
 			</Routes>

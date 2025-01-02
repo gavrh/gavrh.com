@@ -35,7 +35,7 @@ export default function Projects() {
 	return (
 		<ProjectsContainer>
 			{/* cloak */}
-            {/* <Project
+			{/* <Project
 				repo="cloak"
 				desc="The best alternative Discord client"
 				lang="Rust"
@@ -70,7 +70,7 @@ export default function Projects() {
 				color={GithubColors['TypeScript']}
 			/>
 			{/* nvim-config */}
-            {/* <Project
+			{/* <Project
 				repo="nvim-config"
 				desc="My neovim config"
 				lang="Lua"
