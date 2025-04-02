@@ -2,7 +2,7 @@ import React from 'react';
 import tw from 'tailwind-styled-components';
 import { Tooltip } from 'react-tippy';
 import { IconType } from 'react-icons';
-import { SiGithub, SiTwitter, SiLinkedin } from 'react-icons/si';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
@@ -70,12 +70,6 @@ export default function Header() {
 					name="Github"
 					url="https://github.com/gavrh"
 					Icon={SiGithub}
-				/>
-				{/* twitter */}
-				<Social
-					name="Twitter"
-					url="https://x.com/gavholm"
-					Icon={SiTwitter}
 				/>
 				{/* linkedin */}
 				<Social

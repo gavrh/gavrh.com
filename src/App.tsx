@@ -1,11 +1,9 @@
 import React from 'react';
 import tw from 'tailwind-styled-components';
-import Me from './assets/me.jpg';
 import Technologies from './components/Technologies';
 import Experiences from './components/Experiences';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Projects from './components/Projects';
 
 export default function App() {
 	// constants
@@ -26,11 +24,6 @@ export default function App() {
 			<Header />
 			{/* profile */}
 			<Section className="flex mt-[55px]">
-				<img
-					alt="me"
-					src={Me}
-					className="md:block hidden object-cover w-[175px] h-[175px] rounded-lg dark:brightness-[90%] mr-[20px]"
-				/>
 				<div>
 					<div className="flex items-baseline">
 						<span className="dark:text-gray-300 text-zinc-800 sm:text-4xl text-3xl font-bold">
@@ -54,17 +47,8 @@ export default function App() {
 						Software Engineer
 					</h1>
 					<h1 className="mt-[5px] dark:text-gray-500 text-zinc-600 text-xl font-semibold">
-						Bay Area, CA
+						San Francisco, CA
 					</h1>
-					<div className="md:block hidden">
-						<SectionText className="italic mt-[10px]">
-							"Never trust a computer you can't throw out a
-							window."
-						</SectionText>
-						<SectionText className="leading-[15px]">
-							- Steve Wozniak
-						</SectionText>
-					</div>
 				</div>
 			</Section>
 			{/* technologies */}
@@ -78,12 +62,6 @@ export default function App() {
 				<SectionTitle>Experience</SectionTitle>
 				<SectionText>{ExperienceText}</SectionText>
 				<Experiences />
-			</Section>
-			{/* projects */}
-			<Section>
-				<SectionTitle>Projects</SectionTitle>
-				<SectionText>{ProjectsText}</SectionText>
-				<Projects />
 			</Section>
 			{/* footer */}
 			<Footer />
@@ -133,13 +111,12 @@ const TechnologiesText = `
 `;
 
 const ExperienceText = `
-    Throughout my career as a software engineer, I have gained valuable
-    experience working with a wide range of technologies and tackling
-    various challenges across different environments. Below is a closer
-    look at the experiences that have shaped my technical expertise and development approach.
-`;
-
-const ProjectsText = `
-    In my free time, I enjoy creating open source projects on GitHub,
-    so I can learn from others and share what I know. Below are some of my favorite personal projects.
+    With years of experience as a software engineer,
+    I’ve taken on a wide range of roles, consistently
+    delivering results and solving complex technical
+    challenges. From working with diverse technologies
+    to adapting to new environments, my career has been
+    built on a foundation of practical expertise and
+    problem-solving. Below are the key roles that have
+    defined my technical growth and approach to development.
 `;
