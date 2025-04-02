@@ -4,13 +4,13 @@ import { Tooltip } from 'react-tippy';
 import { IconType } from 'react-icons';
 import {
 	SiRust,
+	SiC,
 	SiGo,
 	SiTypescript,
+	SiZig,
+	SiCmake,
 	SiGit,
 	SiDocker,
-	SiZig,
-	SiC,
-	SiCmake,
 	SiReact,
 	SiTauri,
 	SiPostgresql,
@@ -48,10 +48,10 @@ export default function Technologies() {
 	return (
 		<TechnologiesContainer>
 			<Technology name="Rust" Icon={SiRust} />
+			<Technology name="C/C++" Icon={SiC} />
 			<Technology name="Go" Icon={SiGo} />
 			<Technology name="Typescript" Icon={SiTypescript} />
 			<Technology name="Zig" Icon={SiZig} />
-			<Technology name="C/C++" Icon={SiC} />
 			<Technology name="CMake" Icon={SiCmake} />
 			<Technology name="Git" Icon={SiGit} />
 			<Technology name="Docker" Icon={SiDocker} />
