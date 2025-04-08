@@ -4,13 +4,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App';
 
 const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
+	document.getElementById('root') as HTMLElement
 ).render(
-    <div>
-        <Router basename="/">
-            <Routes>
-                <Route path="*" element={<App />} />
-            </Routes>
-        </Router>
-    </div>
-)
+	<div>
+		<Router basename="/">
+			<Routes>
+				<Route path="*" element={<App />} />
+			</Routes>
+		</Router>
+	</div>
+);
