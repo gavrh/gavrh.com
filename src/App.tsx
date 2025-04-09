@@ -1,9 +1,14 @@
 import React from 'react';
+import Header from './components/Header';
 
 export default function App() {
 	return (
-		<div>
-			<h1>Hello, React with TypeScript and Webpack!</h1>
-		</div>
+        <div>
+            <Header />
+            hello, world
+            <h1>
+                hello, world!
+            </h1>
+        </div>
 	);
 }

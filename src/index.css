@@ -2,13 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* add font family soon */
-html,
-body {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
 	width: 100%;
 	height: 100%;
-	margin: 0;
-	padding: 0;
 }
 
 body {
@@ -16,8 +17,8 @@ body {
 }
 
 ::selection {
-	background: rgba(5, 150, 105, 0.5); /* WebKit/Blink Browsers */
+	background: rgba(71, 212, 185, 0.5);
 }
 ::-moz-selection {
-	background: rgba(5, 150, 105, 0.5); /* Gecko Browsers */
+	background: rgba(71, 212, 185, 0.5);
 }
