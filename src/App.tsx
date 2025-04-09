@@ -6,7 +6,7 @@ export default function App() {
         <div>
             <Header />
             hello, world
-            <h1>
+            <h1 className='flex text-white justify-center text-[40px]'>
                 hello, world!
             </h1>
         </div>
