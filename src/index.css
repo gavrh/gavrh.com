@@ -1,24 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
-    margin: 0;
-    padding: 0;
-}
+@import "tailwindcss";
 
 html, body {
-	width: 100%;
-	height: 100%;
+	margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-	padding-bottom: env(safe-area-inset-bottom);
-}
-
-::selection {
-	background: rgba(71, 212, 185, 0.5);
-}
-::-moz-selection {
-	background: rgba(71, 212, 185, 0.5);
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
