@@ -22,6 +22,10 @@ func (t *Templates) Render(
 
 func NewTemplate() *Templates {
 	return &Templates {
-		Templates: template.Must(template.ParseGlob("view/*.html")),
+		Templates: template.Must(template.ParseGlob("views/*.html")),
 	}
 }
+
+const (
+	Index = "index"
+)

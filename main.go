@@ -1,6 +1,7 @@
 package main
 
 import (
+	"gav.codes/site/handlers"
 	"gav.codes/site/templates"
 
 	"github.com/labstack/echo/v4"
@@ -15,6 +16,7 @@ func main() {
 	e.Static("/static/assets", "assets")
 	e.Static("/static/css", "css")
 	e.Renderer = templates.NewTemplate()
+	handlers.HandleRequests(e)
 	e.Start(":6969")
 
 }
