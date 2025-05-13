@@ -1,0 +1,92 @@
+{{ block "index" .  }}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>~/ - Gavin Holmes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale=1>
+        <link href="/static/css/index.css" rel="stylesheet">
+        <script>
+            document.addEventListener("DOMContentLoaded", (event) => {
+                window.history.replaceState({}, "", "/")
+            })
+        </script>
+    </head>
+    <body id="body">
+        <div class="container">
+
+            <h1>
+                # {{ .Consts.Name }}
+            </h1>
+            <p>
+                i'm a 20 year old software engineer from san francisco, ca.
+                i like to create, test, and break software. i'm especially
+                interested in networks, security, encryption, and systems
+                level programming.
+            </p>
+            <div class="links">
+                {{ range .Consts.Socials }}
+                <a href="{{ index . 1 }}" target="_blank">[{{ index . 0 }}]</a>
+                {{ end }}
+            </div>
+
+            <div class="space"></div>
+
+            <h2>
+                ## experience
+            </h2>
+            <ul>
+                {{ range .Consts.Experience }}
+                <li>
+                    <a>{{ index . 0 }}</a>
+                    at
+                    <a
+                        {{ if index . 2 }}
+                        href="{{ index . 2 }}" target="_blank"
+                        {{ end }}
+                        style="color: #4b4e57; font-weight: 600;">
+                        {{ index . 1 }}
+                    </a>
+                    during
+                    <span style="font-weight: 600;">{{ index . 3 }}</span>
+                    -
+                    <span style="font-weight: 600;">{{ index . 4 }}</span>
+                </li>
+                {{ end }}
+            </ul>
+
+            <div class="space"></div>
+
+            <h2>
+                ## projects
+            </h2>
+            <ul>
+                {{ range .Repos }}
+                <li>
+                    <div class="li-item">
+                        <a href="{{ .Href }}" target="_blank">
+                            {{ .Name }}
+                        </a>
+                        - {{ .Description }}
+                        <!--
+			(<div class="lang-blob" style="background-color: #F34B7D;"></div>
+                        <span style="font-weight: 600;">{{ .Language }}</span>)
+			-->
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+
+            <div class="space"></div>
+
+            <h2>
+                ## blog
+            </h2>
+            <p>coming soon...</p>
+
+            <div style="margin-bottom: 100px;"></div>
+
+        </div>
+    </body>
+</html>
+{{ end }}
