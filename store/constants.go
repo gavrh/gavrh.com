@@ -5,4 +5,6 @@ type Constants struct {
 	Age uint
 	City string
 	State string
+	Socials [][]string
+	Experience [][]string
 }
