@@ -2,14 +2,20 @@ package templates
 
 import (
 	"gav.codes/site/store"
+
+	"strings"
 )
 
 type IndexTemplate struct {
+	Consts *store.Constants
+	Text string
 	Repos []store.Repo
 }
 
-func NewIndexTemplate() IndexTemplate {
+func NewIndexTemplate(consts *store.Constants, repos []store.Repo) IndexTemplate {
     return IndexTemplate {
-		Repos: []store.Repo{},
+		Consts: consts,
+		Text: strings.ToLower("ABOUT ME TEXT"),
+		Repos: repos,
     }
 }
