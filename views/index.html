@@ -16,16 +16,18 @@
         <div class="container">
 
             <h1>
-                # gavin holmes
+                # {{ .Consts.Name }}
             </h1>
             <p>
-                about me text
+                i'm a 20 year old software engineer from san francisco, ca.
+                i like to create, test, and break software. i'm especially
+                interested in networks, security, encryption, and systems
+                level programming.
             </p>
             <div class="links">
-                <a href="#">[resume]</a>
-                <a href="#">[github]</a>
-                <a href="#">[linkedin]</a>
-                <a href="#">[email]</a>
+                {{ range .Consts.Socials }}
+                <a href="{{ index . 1 }}" target="_blank">[{{ index . 0 }}]</a>
+                {{ end }}
             </div>
 
             <div class="space"></div>
@@ -34,24 +36,23 @@
                 ## experience
             </h2>
             <ul>
+                {{ range .Consts.Experience }}
                 <li>
-                    <a>computer science tutor</a>
+                    <a>{{ index . 0 }}</a>
                     at
-                    <a style="color: #4b4e57; font-weight: 600;">freelance</a>
+                    <a
+                        {{ if index . 2 }}
+                        href="{{ index . 2 }}" target="_blank"
+                        {{ end }}
+                        style="color: #4b4e57; font-weight: 600;">
+                        {{ index . 1 }}
+                    </a>
                     during
-                    <span style="font-weight: 600;">apr 2023</span>
+                    <span style="font-weight: 600;">{{ index . 3 }}</span>
                     -
-                    <span style="font-weight: 600;">present</span>
+                    <span style="font-weight: 600;">{{ index . 4 }}</span>
                 </li>
-                <li>
-                    <a>freelance swe</a>
-                    at
-                    <a href="https://fiverr.com" style="color: #4b4e57; font-weight: 600;">fiverr</a>
-                    during
-                    <span style="font-weight: 600;">jan 2021</span>
-                    -
-                    <span style="font-weight: 600;">apr 2025</span>
-                </li>
+                {{ end }}
             </ul>
 
             <div class="space"></div>
@@ -60,42 +61,18 @@
                 ## projects
             </h2>
             <ul>
+                {{ range .Repos }}
                 <li>
-                    <a href="https://github.com/gavrh/conve" target="_blank">
-                        conve
-                    </a>
-                    - A daemon for messaging securely with post-quantum encryption
+                    <div class="li-item">
+                        <a href="{{ .Href }}" target="_blank">
+                            {{ .Name }}
+                        </a>
+                        - {{ .Description }}
+                        (<div class="lang-blob" style="background-color: #F34B7D;"></div>
+                        <span style="font-weight: 600;">{{ .Language }}</span>)
+                    </div>
                 </li>
-                <li>
-                    <a href="https://github.com/gavrh/conve">
-                        germ
-                    </a>
-                    - My stupid terminal
-                </li>
-                <li>
-                    <a href="https://github.com/gavrh/conve">
-                        spotless
-                    </a>
-                    - Spotify terminal client
-                </li>
-                <li>
-                    <a href="https://github.com/gavrh/conve">
-                        librespot-c
-                    </a>
-                    - C wrapper for librespot
-                </li>
-                <li>
-                    <a href="https://github.com/gavrh/conve">
-                        scrapbook
-                    </a>
-                    - Online file storage scrapbook for my family
-                </li>
-                <li>
-                    <a href="https://github.com/gavrh/conve">
-                        gav.codes
-                    </a>
-                    - My personal site
-                </li>
+                {{ end }}
             </ul>
 
             <div class="space"></div>
@@ -103,44 +80,8 @@
             <h2>
                 ## blog
             </h2>
-            <ul>
-                <li>
-                    something cool
-                </li>
-                <li>
-                    other cool title
-                </li>
-                <li>
-                    other cool title
-                </li>
-                <li>
-                    other cool title
-                </li>
-                <li>
-                    other cool title
-                </li>
-                <li>
-                    other cool title
-                </li>
-                <li>
-                    other cool title
-                </li>
-                <li>
-                    other cool title
-                </li>
-                <li>
-                    other cool title
-                </li>
-                <li>
-                    other cool title
-                </li>
-                <li>
-                    other cool title
-                </li>
-                <li>
-                    other cool title
-                </li>
-            </ul>
+            <p>coming soon...</p>
+
         </div>
     </body>
 </html>
