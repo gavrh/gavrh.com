@@ -5,7 +5,7 @@
         <title>~/ - Gavin Holmes</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale=1>
-        <link href="static/css/index.css" rel="stylesheet">
+        <link href="/static/css/index.css" rel="stylesheet">
         <script>
             document.addEventListener("DOMContentLoaded", (event) => {
                 window.history.replaceState({}, "", "/")
@@ -68,8 +68,10 @@
                             {{ .Name }}
                         </a>
                         - {{ .Description }}
-                        (<div class="lang-blob" style="background-color: #F34B7D;"></div>
+                        <!--
+			(<div class="lang-blob" style="background-color: #F34B7D;"></div>
                         <span style="font-weight: 600;">{{ .Language }}</span>)
+			-->
                     </div>
                 </li>
                 {{ end }}
@@ -81,6 +83,8 @@
                 ## blog
             </h2>
             <p>coming soon...</p>
+
+            <div style="margin-bottom: 100px;"></div>
 
         </div>
     </body>

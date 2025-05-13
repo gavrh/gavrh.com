@@ -21,7 +21,7 @@ func main() {
 		Socials: [][]string {
 			{
 				"resume",
-				"https://gav.codes/static/assets/Gavin_Holmes_Resume.pdf",
+				"/static/assets/Gavin_Holmes_Resume.pdf",
 			}, {
 				"github",
 				"https://github.com/gavrh",
@@ -35,12 +35,6 @@ func main() {
 		},
 		Experience: [][]string {
 			{
-				"systems software intern",
-				"subtrace",
-				"https://subtrace.dev",
-				"jun 2025",
-				"present",
-			}, {
 				"computer science tutor",
 				"freelance",
 				"",
