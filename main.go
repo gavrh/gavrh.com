@@ -58,6 +58,7 @@ func main() {
 		[]string {
 			"conve",
 			"germ",
+			"noslate",
 			"spotless",
 			"librespot-c",
 			"scrapbook",
