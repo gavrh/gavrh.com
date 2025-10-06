@@ -20,9 +20,6 @@ func main() {
 		State: "CA",
 		Socials: [][]string {
 			{
-				"resume",
-				"/static/assets/Gavin_Holmes_Resume.pdf",
-			}, {
 				"github",
 				"https://github.com/gavrh",
 			}, {
