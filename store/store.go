@@ -10,6 +10,7 @@ import (
 )
 
 type Store struct {
+	Avatar Avatar
 	Repos []Repo
 }
 
@@ -37,6 +38,16 @@ func RefreshStore(atom *atomic.Value, username string, repoNames []string) {
 						}
 					}
 				}
+			}
+		}
+
+		res, err = http.Get(fmt.Sprintf("https://api.github.com/users/%s", username))
+		if err == nil {
+			var avatar Avatar
+			err = json.NewDecoder(res.Body).Decode(&avatar)
+
+			if err == nil {
+				store.Avatar = avatar
 			}
 		}
 

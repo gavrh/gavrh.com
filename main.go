@@ -1,9 +1,9 @@
 package main
 
 import (
-	"gav.codes/site/handlers"
-	"gav.codes/site/store"
-	"gav.codes/site/templates"
+	"gav.rh/site/handlers"
+	"gav.rh/site/store"
+	"gav.rh/site/templates"
 
 	"sync/atomic"
 
@@ -15,19 +15,19 @@ func main() {
 
 	consts := store.Constants {
 		Name: "gavin holmes",
-		Age: 19,
-		City: "San Francisco",
-		State: "CA",
+		Age: 20,
+		City: "san francisco",
+		State: "ca",
 		Socials: [][]string {
 			{
 				"github",
 				"https://github.com/gavrh",
 			}, {
-				"linkedin",
-				"https://linkedin.com/in/gavrh",
+				"discord",
+				"https://discord.com/users/1111386258908917862",
 			}, {
 				"email",
-				"mailto:gavin@gav.codes",
+				"mailto:gavin@gav.rh",
 			},
 		},
 		Experience: [][]string {
@@ -36,7 +36,7 @@ func main() {
 				"freelance",
 				"",
 				"apr 2023",
-				"present",
+				"dec 2025",
 			}, {
 				"freelance swe",
 				"fiverr",
@@ -53,13 +53,10 @@ func main() {
 		&atom,
 		"gavrh",
 		[]string {
-			"conve",
-			"germ",
 			"noslate",
-			"spotless",
 			"librespot-c",
 			"scrapbook",
-			"gav.codes",
+			"gav.rh",
 		},
 	)
 

@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"gav.codes/site/store"
-	"gav.codes/site/templates"
+	"gav.rh/site/store"
+	"gav.rh/site/templates"
 
 	"net/http"
 	"sync/atomic"
@@ -30,5 +30,5 @@ func HandleGet(c echo.Context, consts *store.Constants, atom *atomic.Value) erro
 
     }
     
-	return c.Render(http.StatusOK, templates.Index, templates.NewIndexTemplate(consts, atom.Load().(store.Store).Repos))
+	return c.Render(http.StatusOK, templates.Index, templates.NewIndexTemplate(consts, atom.Load().(store.Store).Repos, atom.Load().(store.Store).Avatar))
 }
