@@ -1,7 +1,7 @@
 package templates
 
 import (
-	"gav.rh/site/store"
+	"gavrh.com/site/store"
 
 	"fmt"
 	"strings"

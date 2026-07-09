@@ -1,4 +1,4 @@
-module gav.rh/site
+module gavrh.com/site
 
 go 1.24.3
 
