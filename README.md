@@ -1,3 +1,3 @@
-# [gav.rh](https://gav.rh/)
+# [gavrh.com](https://gavrh.com)
 
 My personal site

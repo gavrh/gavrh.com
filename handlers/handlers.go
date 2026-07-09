@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"gav.rh/site/store"
-	"gav.rh/site/templates"
+	"gavrh.com/site/store"
+	"gavrh.com/site/templates"
 
 	"net/http"
 	"sync/atomic"

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"gav.rh/site/handlers"
-	"gav.rh/site/store"
-	"gav.rh/site/templates"
+	"gavrh.com/site/handlers"
+	"gavrh.com/site/store"
+	"gavrh.com/site/templates"
 
 	"sync/atomic"
 
@@ -15,19 +15,19 @@ func main() {
 
 	consts := store.Constants {
 		Name: "gavin holmes",
-		Age: 20,
+		Age: 21,
 		City: "san francisco",
 		State: "ca",
 		Socials: [][]string {
 			{
+				"linkedin",
+				"https://www.linkedin.com/in/gavrh",
+			}, {
 				"github",
 				"https://github.com/gavrh",
 			}, {
 				"discord",
 				"https://discord.com/users/1111386258908917862",
-			}, {
-				"email",
-				"mailto:gavin@gav.rh",
 			},
 		},
 		Experience: [][]string {
