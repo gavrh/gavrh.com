@@ -56,7 +56,7 @@ func main() {
 			"noslate",
 			"librespot-c",
 			"scrapbook",
-			"gav.rh",
+			"gavrh.com",
 		},
 	)
 
