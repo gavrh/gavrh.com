@@ -53,6 +53,7 @@ func main() {
 		&atom,
 		"gavrh",
 		[]string {
+			"rojo-placepack",
 			"noslate",
 			"librespot-c",
 			"scrapbook",
