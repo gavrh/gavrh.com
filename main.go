@@ -32,6 +32,12 @@ func main() {
 		},
 		Experience: [][]string {
 			{
+				"gameplay programmer",
+				"locked in studios",
+				"https://locked.dev",
+				"jul 2026",
+				"present",
+			}, {
 				"computer science tutor",
 				"freelance",
 				"",
