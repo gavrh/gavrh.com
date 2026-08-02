@@ -47,7 +47,7 @@
                     >
                         {{ index . 0 }}
                     </a>
-                    at
+                    @
                     <a
                         {{ if index . 2 }}
                         href="{{ index . 2 }}" target="_blank"
@@ -55,10 +55,10 @@
                     >
                         {{ index . 1 }}
                     </a>
-                    during
-                    <span style="font-weight: 600;">{{ index . 3 }}</span>
+                    
+                    (<span style="font-weight: 600;">{{ index . 3 }}</span>
                     -
-                    <span style="font-weight: 600;">{{ index . 4 }}</span>
+                    <span style="font-weight: 600;">{{ index . 4 }}</span>)
                 </li>
                 {{ end }}
             </ul>
