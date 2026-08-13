@@ -19,12 +19,12 @@ type IndexTemplate struct {
 func NewIndexTemplate(consts *store.Constants, repos []store.Repo, avatar store.Avatar) IndexTemplate {
     return IndexTemplate {
 		Consts: consts,
-		Text: strings.ToLower(fmt.Sprintf(`
-			i'm a %d year old software engineer from %s, %s.
-			i like to create, test, and break software. i'm especially
-			interested in networks, security, encryption, and systems
-			level programming.
-		`, consts.Age, consts.City, consts.State)),
+		Text: strings.ToLower(fmt.Sprintf(
+			"i'm a %d year old software engineer from %s, %s. " +
+			"i like to create, test, and break software. i'm especially " +
+			"interested in networks, security, encryption, and systems " +
+			"level programming.",
+			consts.Age, consts.City, consts.State)),
 		Repos: repos,
 		AvatarUrl: avatar.Url,
 		Year: time.Now().Year(),
