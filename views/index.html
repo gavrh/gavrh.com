@@ -5,7 +5,7 @@
         <title>Gavin Holmes</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale=1>
-        <link href="/static/css/index.css?rel=true" rel="stylesheet">
+        <link href="/static/css/index.css?v=g" rel="stylesheet">
         <link rel="icon" type="image/png" href="{{ .AvatarUrl }}">
         <meta property="og:title" content="Gavin Holmes">
         <meta property="og:description" content="{{ .Text }}">
@@ -25,14 +25,14 @@
             <h1 style="margin-top: 15%;">
                 # {{ .Consts.Name }}
             </h1>
-            <p>
-                {{ .Text }}
-            </p>
             <div class="links">
                 {{ range .Consts.Socials }}
                 <a href="{{ index . 1 }}" target="_blank">[{{ index . 0 }}]</a>
                 {{ end }}
             </div>
+            <p>
+                {{ .Text }}
+            </p>
 
             <div class="space"></div>
 
