@@ -62,6 +62,7 @@ func main() {
 			"fault",
 			"rojo-placepack",
 			"noslate",
+			"spotless",
 			"librespot-c",
 			"scrapbook",
 			"gavrh.com",
