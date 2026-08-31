@@ -32,7 +32,7 @@ func main() {
 		},
 		Experience: [][]string {
 			{
-				"gameplay programmer",
+				"gameplay engineer",
 				"locked in studios",
 				"https://locked.dev",
 				"jul 2026",
@@ -70,7 +70,7 @@ func main() {
 	)
 
 	e := echo.New()
-	e.Use(middleware.Logger())
+	e.Use(middleware.RequestLogger())
 	e.IPExtractor = echo.ExtractIPDirect()
 	e.Static("/static/assets", "assets")
 	e.Static("/static/css", "css")
