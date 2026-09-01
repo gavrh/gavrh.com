@@ -20,6 +20,9 @@ func main() {
 		State: "ca",
 		Socials: [][]string {
 			{
+				"resume",
+				"/static/assets/Gavin-Holmes-Resume.pdf",
+			}, {
 				"linkedin",
 				"https://www.linkedin.com/in/gavrh",
 			}, {
