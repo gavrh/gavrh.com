@@ -28,9 +28,6 @@ func main() {
 			}, {
 				"github",
 				"https://github.com/gavrh",
-			}, {
-				"discord",
-				"https://discord.com/users/1111386258908917862",
 			},
 		},
 		Experience: [][]string {
