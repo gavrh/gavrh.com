@@ -15,6 +15,25 @@ document.addEventListener("DOMContentLoaded", () => {
     let wheelHandled = false
     let wheelTimer
 
+    const formatCount = value => {
+        if (value < 1000) return String(value)
+
+        const suffixes = ["", "k", "m", "b", "t"]
+        let unit = Math.min(Math.floor(Math.log10(value) / 3), suffixes.length - 1)
+        let compact = Math.round(value / 1000 ** unit * 10) / 10
+
+        if (compact >= 1000 && unit < suffixes.length - 1) {
+            compact /= 1000
+            unit++
+        }
+
+        return `${compact}${suffixes[unit]}`
+    }
+
+    document.querySelectorAll(".project-stats .metric-text").forEach(metric => {
+        metric.textContent = formatCount(Number(metric.textContent))
+    })
+
     const sheetTop = index => sheets
         .slice(0, index)
         .reduce((top, sheet) => top + sheet.offsetHeight, 0)
