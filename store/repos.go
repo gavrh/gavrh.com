@@ -1,5 +1,18 @@
 package store
 
+import (
+	"fmt"
+	"net/http"
+	"strings"
+	"time"
+
+	"gopkg.in/yaml.v3"
+)
+
+const languageColorsURL = "https://raw.githubusercontent.com/github-linguist/linguist/main/lib/linguist/languages.yml"
+
+var githubClient = &http.Client{Timeout: 10 * time.Second}
+
 type Repo struct {
 	Name        string `json:"name"`
 	Description string `json:"description"`
@@ -10,21 +23,36 @@ type Repo struct {
 	Color       string
 }
 
-func languageColor(language string) string {
-	colors := map[string]string{
-		"c":          "#555555",
-		"c++":        "#f34b7d",
-		"css":        "#563d7c",
-		"go":         "#00add8",
-		"html":       "#e34c26",
-		"java":       "#b07219",
-		"javascript": "#f1e05a",
-		"lua":        "#000080",
-		"rust":       "#dea584",
-		"typescript": "#3178c6",
+func fetchLanguageColors() (map[string]string, error) {
+	res, err := githubClient.Get(languageColorsURL)
+	if err != nil {
+		return nil, err
+	}
+	defer res.Body.Close()
+
+	if res.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("fetch language colors: %s", res.Status)
 	}
 
-	if color, ok := colors[language]; ok {
+	var languages map[string]struct {
+		Color string `yaml:"color"`
+	}
+	if err := yaml.NewDecoder(res.Body).Decode(&languages); err != nil {
+		return nil, err
+	}
+
+	colors := make(map[string]string, len(languages))
+	for language, details := range languages {
+		if details.Color != "" {
+			colors[strings.ToLower(language)] = details.Color
+		}
+	}
+
+	return colors, nil
+}
+
+func languageColor(language string, colors map[string]string) string {
+	if color, ok := colors[strings.ToLower(language)]; ok {
 		return color
 	}
 	return "#8b949e"
