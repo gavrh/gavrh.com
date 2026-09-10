@@ -2,7 +2,10 @@ module gavrh.com/site
 
 go 1.25.0
 
-require github.com/labstack/echo/v4 v4.15.4
+require (
+	github.com/labstack/echo/v4 v4.15.4
+	gopkg.in/yaml.v3 v3.0.1
+)
 
 require (
 	github.com/labstack/gommon v0.5.0 // indirect
