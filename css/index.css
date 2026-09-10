@@ -531,12 +531,7 @@ h2 {
     .intro-footer,
     .end-matter {
         align-items: flex-start;
-        flex-direction: column;
         gap: 0.9rem;
-    }
-
-    .scroll-note {
-        display: none;
     }
 
     .section-heading {
