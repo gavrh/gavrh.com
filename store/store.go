@@ -11,7 +11,7 @@ import (
 
 type Store struct {
 	Avatar Avatar
-	Repos []Repo
+	Repos  []Repo
 }
 
 func RefreshStore(atom *atomic.Value, username string, repoNames []string) {
@@ -27,14 +27,16 @@ func RefreshStore(atom *atomic.Value, username string, repoNames []string) {
 			err = json.NewDecoder(res.Body).Decode(&repoData)
 
 			if err == nil {
-				names: for _, n := range repoNames {
+			names:
+				for _, n := range repoNames {
 					for _, r := range repoData {
 						if r.Name == n {
 							r.Name = strings.ToLower(r.Name)
 							r.Description = strings.ToLower(r.Description)
 							r.Language = strings.ToLower(r.Language)
+							r.Color = languageColor(r.Language)
 							repos = append(repos, r)
-							continue names;
+							continue names
 						}
 					}
 				}
@@ -56,6 +58,6 @@ func RefreshStore(atom *atomic.Value, username string, repoNames []string) {
 		}
 
 		atom.Store(store)
-		time.Sleep(time.Duration(5) * time.Minute);
+		time.Sleep(time.Duration(5) * time.Minute)
 	}
 }

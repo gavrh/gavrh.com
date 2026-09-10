@@ -1,10 +1,20 @@
 package store
 
+import "time"
+
 type Constants struct {
-	Name string
-	Age uint
-	City string
-	State string
-	Socials [][]string
-	Experience [][]string
+	FirstName       string
+	LastName        string
+	Birthday        time.Time
+	Role            string
+	City            string
+	State           string
+	About           string
+	ExperienceIntro string
+	ProjectsIntro   string
+	ProjectsEmpty   string
+	ContactEmail    string
+	CopyrightPrefix string
+	Socials         [][]string
+	Experience      [][]string
 }
