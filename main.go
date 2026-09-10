@@ -6,6 +6,7 @@ import (
 	"gavrh.com/site/templates"
 
 	"sync/atomic"
+	"time"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -13,12 +14,24 @@ import (
 
 func main() {
 
-	consts := store.Constants {
-		Name: "gavin holmes",
-		Age: 21,
-		City: "san francisco",
+	consts := store.Constants{
+		FirstName: "gavin",
+		LastName:  "holmes",
+
+		Birthday: time.Date(2005, time.May, 27, 0, 0, 0, 0, time.Local),
+
+		Role:  "software engineer",
+		City:  "san francisco",
 		State: "ca",
-		Socials: [][]string {
+		About: "i like to create, test, and break software. i'm especially interested in networks, security, encryption, and systems level programming.",
+
+		ExperienceIntro: "where i've been useful",
+		ProjectsIntro: "things made public",
+		ProjectsEmpty: "github is taking a moment. the work is still there.",
+
+		ContactEmail: "gavinholmie (at) gmail (dot) com",
+		CopyrightPrefix: "all rights reserved",
+		Socials: [][]string{
 			{
 				"linkedin",
 				"https://www.linkedin.com/in/gavrh",
@@ -27,7 +40,7 @@ func main() {
 				"https://github.com/gavrh",
 			},
 		},
-		Experience: [][]string {
+		Experience: [][]string{
 			{
 				"gameplay engineer",
 				"locked in studios",
@@ -51,11 +64,11 @@ func main() {
 	}
 
 	var atom atomic.Value
-	atom.Store(store.Store { Repos: []store.Repo{} })
+	atom.Store(store.Store{Repos: []store.Repo{}})
 	go store.RefreshStore(
 		&atom,
 		"gavrh",
-		[]string {
+		[]string{
 			"fault",
 			"rojo-placepack",
 			"noslate",
@@ -71,8 +84,8 @@ func main() {
 	e.IPExtractor = echo.ExtractIPFromXFFHeader()
 	e.Static("/static/assets", "assets")
 	e.Static("/static/css", "css")
+	e.Static("/static/scripts", "scripts")
 	e.Renderer = templates.NewTemplate()
 	handlers.HandleRequests(e, &consts, &atom)
 	e.Start(":6969")
-
 }
