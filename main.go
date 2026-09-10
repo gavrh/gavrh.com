@@ -16,12 +16,12 @@ func main() {
 
 	consts := store.Constants{
 		FirstName: "gavin",
-		LastName:  "holmes",
+		LastName: "holmes",
 
 		Birthday: time.Date(2005, time.May, 27, 0, 0, 0, 0, time.Local),
 
-		Role:  "software engineer",
-		City:  "san francisco",
+		Role: "software engineer",
+		City: "san francisco",
 		State: "ca",
 		About: "i like to create, test, and break software. i'm especially interested in networks, security, encryption, and systems level programming.",
 
