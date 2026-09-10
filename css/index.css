@@ -302,6 +302,7 @@ h2 {
 
 .project h3 {
     min-width: 0;
+    line-height: 1;
 }
 
 .project p {
@@ -309,7 +310,7 @@ h2 {
     overflow: hidden;
     color: var(--muted-light);
     font-size: clamp(0.72rem, 0.95vw, 0.82rem);
-    line-height: 1.2;
+    line-height: 1;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -358,7 +359,6 @@ h2 {
 .metric-text {
     display: block;
     line-height: 1;
-    transform: translateY(1px);
 }
 
 .project-stats img {
@@ -372,11 +372,22 @@ h2 {
 
 .language-dot {
     display: block;
-    flex: 0 0 auto;
+    flex: 0 0 0.55rem;
     width: 0.55rem;
     height: 0.55rem;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 50%;
+    overflow: visible;
+    transform: translateY(-1px);
+}
+
+.language-dot circle {
+    fill: currentColor;
+    stroke: rgba(255, 255, 255, 0.35);
+    stroke-width: 1;
+}
+
+.project:hover .language-dot circle,
+.project:focus-visible .language-dot circle {
+    stroke: rgba(50, 53, 62, 0.25);
 }
 
 .project-arrow {

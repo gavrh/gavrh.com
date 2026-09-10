@@ -87,7 +87,9 @@
                                 <div class="project-details">
                                     {{ if $repo.Language }}
                                     <span class="project-language">
-                                        <span class="language-dot" style="background-color: {{ $repo.Color }}"></span>
+                                        <svg class="language-dot" viewBox="0 0 10 10" aria-hidden="true" style="color: {{ $repo.Color }}">
+                                            <circle cx="5" cy="5" r="4.5"></circle>
+                                        </svg>
                                         <span class="metric-text">{{ $repo.Language }}</span>
                                     </span>
                                     {{ end }}
