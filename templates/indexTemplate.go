@@ -9,24 +9,30 @@ import (
 )
 
 type IndexTemplate struct {
-	Consts *store.Constants
-	Text string
-	Repos []store.Repo
+	Consts    *store.Constants
+	Text      string
+	Repos     []store.Repo
 	AvatarUrl string
-	Year int
+	Year      int
+	Timestamp int64
 }
 
 func NewIndexTemplate(consts *store.Constants, repos []store.Repo, avatar store.Avatar) IndexTemplate {
-    return IndexTemplate {
+	now := time.Now()
+	age := now.Year() - consts.Birthday.Year()
+	birthdayThisYear := time.Date(now.Year(), consts.Birthday.Month(), consts.Birthday.Day(), 0, 0, 0, 0, now.Location())
+	if now.Before(birthdayThisYear) {
+		age--
+	}
+
+	return IndexTemplate{
 		Consts: consts,
 		Text: strings.ToLower(fmt.Sprintf(
-			"i'm a %d year old software engineer from %s, %s. " +
-			"i like to create, test, and break software. i'm especially " +
-			"interested in networks, security, encryption, and systems " +
-			"level programming.",
-			consts.Age, consts.City, consts.State)),
-		Repos: repos,
+			"i'm a %d year old %s from %s, %s. %s",
+			age, consts.Role, consts.City, consts.State, consts.About)),
+		Repos:     repos,
 		AvatarUrl: avatar.Url,
-		Year: time.Now().Year(),
-    }
+		Year:      now.Year(),
+		Timestamp: now.UnixNano(),
+	}
 }
