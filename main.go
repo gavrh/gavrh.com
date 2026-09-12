@@ -59,6 +59,12 @@ func main() {
 				"https://fiverr.com",
 				"jan 2021",
 				"apr 2025",
+			}, {
+				"open source contributor",
+				"for the love of the game",
+				"",
+				"ᦠ",
+				"",
 			},
 		},
 	}
