@@ -75,6 +75,7 @@ func main() {
 		&atom,
 		"gavrh",
 		[]string{
+			"stutter",
 			"fault",
 			"rojo-placepack",
 			"noslate",
