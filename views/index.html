@@ -85,16 +85,12 @@
                             <p>{{ $repo.Description }}</p>
                             <div class="project-actions">
                                 <div class="project-details">
-                                    {{ if $repo.Languages }}
-                                    <span class="project-languages">
-                                        {{ range $language := $repo.Languages }}
-                                        <span class="project-language">
-                                            <svg class="language-dot" viewBox="0 0 10 10" aria-hidden="true" style="color: {{ $language.Color }}">
-                                                <circle cx="5" cy="5" r="4.5"></circle>
-                                            </svg>
-                                            <span class="metric-text">{{ $language.Name }}</span>
-                                        </span>
-                                        {{ end }}
+                                    {{ if $repo.Language }}
+                                    <span class="project-language">
+                                        <svg class="language-dot" viewBox="0 0 10 10" aria-hidden="true" style="color: {{ $repo.Color }}">
+                                            <circle cx="5" cy="5" r="4.5"></circle>
+                                        </svg>
+                                        <span class="metric-text">{{ $repo.Language }}</span>
                                     </span>
                                     {{ end }}
                                     {{ if or $repo.Stars $repo.Forks }}

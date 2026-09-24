@@ -16,7 +16,6 @@ type Store struct {
 
 func RefreshStore(atom *atomic.Value, username string, repoNames []string) {
 	var languageColors map[string]string
-	repoLanguages := make(map[string][]RepoLanguage)
 
 	for {
 		if languageColors == nil {
@@ -42,22 +41,10 @@ func RefreshStore(atom *atomic.Value, username string, repoNames []string) {
 				for _, n := range repoNames {
 					for _, r := range repoData {
 						if r.Name == n {
-							languages, cached := repoLanguages[n]
-							if !cached {
-								if fetched, fetchErr := fetchRepoLanguages(r.LanguagesURL); fetchErr == nil {
-									languages = fetched
-									repoLanguages[n] = fetched
-								}
-							}
-
-							languages = append([]RepoLanguage(nil), languages...)
-							for i := range languages {
-								languages[i].Color = languageColor(languages[i].Name, languageColors)
-							}
-
 							r.Name = strings.ToLower(r.Name)
 							r.Description = strings.ToLower(r.Description)
-							r.Languages = languages
+							r.Language = strings.ToLower(r.Language)
+							r.Color = languageColor(r.Language, languageColors)
 							repos = append(repos, r)
 							continue names
 						}
