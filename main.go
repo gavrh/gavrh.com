@@ -81,7 +81,7 @@ func main() {
 			"noslate",
 			"spotless",
 			"librespot-c",
-			"scrapbook",
+			"leetcode",
 			"gavrh.com",
 		},
 	)
