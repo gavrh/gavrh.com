@@ -34,6 +34,38 @@ document.addEventListener("DOMContentLoaded", () => {
         metric.textContent = formatCount(Number(metric.textContent))
     })
 
+    const ageDisplay = document.querySelector(".age")
+
+    if (ageDisplay) {
+        const birthday = new Date(Number(ageDisplay.dataset.birthday))
+        const anniversary = year => new Date(year, birthday.getMonth(), birthday.getDate())
+
+        const decimalAge = () => {
+            const now = new Date()
+            let last = anniversary(now.getFullYear())
+            if (last > now) last = anniversary(now.getFullYear() - 1)
+            const next = anniversary(last.getFullYear() + 1)
+
+            const years = last.getFullYear() - birthday.getFullYear()
+            return years + (now - last) / (next - last)
+        }
+
+        const renderAge = () => {
+            ageDisplay.textContent = decimalAge().toFixed(10)
+        }
+
+        if (reducedMotion.matches) {
+            renderAge()
+        } else {
+            const tickAge = () => {
+                renderAge()
+                requestAnimationFrame(tickAge)
+            }
+
+            tickAge()
+        }
+    }
+
     const sheetTop = index => sheets
         .slice(0, index)
         .reduce((top, sheet) => top + sheet.offsetHeight, 0)
