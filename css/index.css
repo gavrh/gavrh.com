@@ -173,8 +173,7 @@ h1 span {
     gap: 0.65rem 1.5rem;
 }
 
-.socials a,
-.contact-link {
+.socials a {
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -182,8 +181,7 @@ h1 span {
 }
 
 .socials a span,
-.role a span,
-.contact-link span {
+.role a span {
     display: inline-block;
     color: var(--teal);
     transition: transform 180ms ease;
@@ -191,10 +189,8 @@ h1 span {
 
 .socials a:hover span,
 .role a:hover span,
-.contact-link:hover span,
 .socials a:focus-visible span,
-.role a:focus-visible span,
-.contact-link:focus-visible span {
+.role a:focus-visible span {
     transform: translate(0.2rem, -0.2rem);
 }
 
@@ -480,14 +476,8 @@ h2 {
 
 .sheet-contact .eyebrow,
 .sheet-contact .contact-email,
-.sheet-contact .contact-link,
-.sheet-contact .contact-link span,
 .sheet-contact .contact-copy h2 em {
     color: var(--teal-light);
-}
-
-.sheet-contact .contact-link {
-    border-color: var(--teal-light);
 }
 
 .sheet-contact .contact-copy > p:not(.eyebrow):not(.contact-email),
@@ -540,30 +530,10 @@ h2 {
     line-height: 1.65;
 }
 
-.contact-link {
-    margin-top: clamp(1.5rem, 4vh, 3rem);
-    padding-bottom: 0.4rem;
-    border-bottom: 2px solid var(--teal);
-    font-size: clamp(0.85rem, 1.5vw, 1.05rem);
-}
-
 .end-matter {
     color: var(--soft-ink);
     font-size: 0.67rem;
     letter-spacing: 0.05em;
-}
-
-.status {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.status-light {
-    width: 0.55rem;
-    height: 0.55rem;
-    border-radius: 50%;
-    background: var(--teal);
 }
 
 @media (max-width: 800px) {
