@@ -25,9 +25,6 @@ func main() {
 		State: "ca",
 		Interests: [][]string{
 			{
-				"linux",
-				"https://github.com/gavrh/dotfiles",
-			}, {
 				"networks",
 				"",
 			}, {
@@ -36,6 +33,9 @@ func main() {
 			}, {
 				"tooling",
 				"",
+			}, {
+				"linux",
+				"https://github.com/gavrh/dotfiles",
 			},
 		},
 
