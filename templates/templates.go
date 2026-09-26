@@ -21,8 +21,12 @@ func (t *Templates) Render(
 }
 
 func NewTemplate() *Templates {
+	funcs := template.FuncMap{
+		"sub": func(a, b int) int { return a - b },
+	}
+
 	return &Templates {
-		Templates: template.Must(template.ParseGlob("views/*.html")),
+		Templates: template.Must(template.New("views").Funcs(funcs).ParseGlob("views/*.html")),
 	}
 }
 

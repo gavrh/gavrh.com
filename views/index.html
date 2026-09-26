@@ -27,7 +27,7 @@
                             <ul class="intro-facts">
                                 <li>i'm <span class="age" data-birthday="{{ .Consts.Birthday.UnixMilli }}">{{ .Age }}</span> years old</li>
                                 <li>from {{ .Consts.City }}, {{ .Consts.State }}</li>
-                                <li><span class="heart">&#10084;&#65039;</span>{{ range $index, $interest := .Consts.Interests }}{{ if $index }}, {{ end }}{{ $name := index $interest 0 }}{{ if index $interest 1 }}<a href="{{ index $interest 1 }}" target="_blank" rel="noreferrer">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}{{ end }}</li>
+                                <li>i <span class="heart">&#10084;&#65039;</span>{{ range $index, $interest := .Consts.Interests }}{{ if $index }}{{ if eq $index (sub (len $.Consts.Interests) 1) }}, and {{ else }}, {{ end }}{{ end }}{{ $name := index $interest 0 }}{{ if index $interest 1 }}<a href="{{ index $interest 1 }}" target="_blank" rel="noreferrer">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}{{ end }}</li>
                             </ul>
                         </div>
                     </div>
