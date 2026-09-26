@@ -23,7 +23,21 @@ func main() {
 		Role: "software engineer",
 		City: "san francisco",
 		State: "ca",
-		About: "i like to create, test, and break software. i'm especially interested in networks, security, encryption, and systems level programming.",
+		Interests: [][]string{
+			{
+				"linux",
+				"https://github.com/gavrh/dotfiles",
+			}, {
+				"networks",
+				"",
+			}, {
+				"security",
+				"",
+			}, {
+				"tooling",
+				"",
+			},
+		},
 
 		ExperienceIntro: "where i've been useful",
 		ProjectsIntro: "things made public",

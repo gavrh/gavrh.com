@@ -9,7 +9,7 @@ type Constants struct {
 	Role            string
 	City            string
 	State           string
-	About           string
+	Interests       [][]string
 	ExperienceIntro string
 	ProjectsIntro   string
 	ProjectsEmpty   string
