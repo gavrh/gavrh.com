@@ -2,11 +2,11 @@ FROM golang:1 AS builder
 
 WORKDIR /src
 
-COPY go.mod go.sum ./
+COPY go.mod ./
 RUN go mod download
 
 COPY . .
-RUN CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o /site .
+RUN CGO_ENABLED=0 go build -mod=mod -trimpath -ldflags="-s -w" -o /site .
 
 FROM alpine:3.22
 
