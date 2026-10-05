@@ -6,7 +6,7 @@ COPY go.mod ./
 RUN go mod download
 
 COPY . .
-RUN CGO_ENABLED=0 go build -mod=mod -trimpath -ldflags="-s -w" -o /site .
+RUN CGO_ENABLED=0 GOMAXPROCS=1 go build -p=1 -mod=mod -trimpath -ldflags="-s -w" -o /site .
 
 FROM alpine:3.22
 
