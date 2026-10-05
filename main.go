@@ -89,6 +89,7 @@ func main() {
 		&atom,
 		"gavrh",
 		[]string{
+			"discordml",
 			"stutter",
 			"fault",
 			"rojo-placepack",
