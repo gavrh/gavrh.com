@@ -10,8 +10,6 @@ type Constants struct {
 	City            string
 	State           string
 	Interests       [][]string
-	ExperienceIntro string
-	ProjectsIntro   string
 	ProjectsEmpty   string
 	ContactEmail    string
 	CopyrightPrefix string

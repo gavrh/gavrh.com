@@ -8,37 +8,14 @@ import (
 	"time"
 )
 
-type CurrentRole struct {
-	Role    string
-	Company string
-	Href    string
-}
-
 type IndexTemplate struct {
-	Consts       *store.Constants
-	Text         string
-	Age          int
-	CurrentRoles []CurrentRole
-	Repos        []store.Repo
-	AvatarUrl    string
-	Year         int
-	Timestamp    int64
-}
-
-func currentRoles(experience [][]string) []CurrentRole {
-	var roles []CurrentRole
-	for _, entry := range experience {
-		if len(entry) < 5 || entry[4] != "present" {
-			continue
-		}
-
-		roles = append(roles, CurrentRole{
-			Role:    entry[0],
-			Company: entry[1],
-			Href:    entry[2],
-		})
-	}
-	return roles
+	Consts    *store.Constants
+	Text      string
+	Age       int
+	Repos     []store.Repo
+	AvatarUrl string
+	Year      int
+	Timestamp int64
 }
 
 func age(birthday, now time.Time) int {
@@ -78,11 +55,10 @@ func NewIndexTemplate(consts *store.Constants, repos []store.Repo, avatar store.
 			"%s %s is a %s in %s, %s. he is interested in %s.",
 			consts.FirstName, consts.LastName, consts.Role, consts.City, consts.State,
 			sentenceList(consts.Interests))),
-		Age:          age(consts.Birthday, now),
-		CurrentRoles: currentRoles(consts.Experience),
-		Repos:        repos,
-		AvatarUrl:    avatar.Url,
-		Year:         now.Year(),
-		Timestamp:    now.UnixNano(),
+		Age:       age(consts.Birthday, now),
+		Repos:     repos,
+		AvatarUrl: avatar.Url,
+		Year:      now.Year(),
+		Timestamp: now.UnixNano(),
 	}
 }
