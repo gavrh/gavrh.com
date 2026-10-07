@@ -15,7 +15,6 @@ type IndexTemplate struct {
 	Repos     []store.Repo
 	AvatarUrl string
 	Year      int
-	Timestamp int64
 }
 
 func age(birthday, now time.Time) int {
@@ -59,6 +58,5 @@ func NewIndexTemplate(consts *store.Constants, repos []store.Repo, avatar store.
 		Repos:     repos,
 		AvatarUrl: avatar.Url,
 		Year:      now.Year(),
-		Timestamp: now.UnixNano(),
 	}
 }
