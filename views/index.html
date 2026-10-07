@@ -22,7 +22,6 @@
                     <div class="intro-layout">
                         <div class="intro-copy">
                             <h1 id="intro-title">{{ .Consts.FirstName }}<br><span>{{ .Consts.LastName }}</span></h1>
-                            <p class="intro-role">{{ range $index, $role := .CurrentRoles }}{{ if $index }}, {{ end }}{{ $role.Role }} @ {{ if $role.Href }}<a href="{{ $role.Href }}" target="_blank" rel="noreferrer">{{ $role.Company }}</a>{{ else }}{{ $role.Company }}{{ end }}{{ end }}</p>
                             <ul class="intro-facts">
                                 <li>i'm {{ .Age }} years old</li>
                                 <li>from {{ .Consts.City }}, {{ .Consts.State }}</li>
@@ -48,7 +47,6 @@
                 <div class="sheet-frame">
                     <div class="section-heading">
                         <div>
-                            <p class="eyebrow">{{ .Consts.ExperienceIntro }}</p>
                             <h2 id="experience-title">experience</h2>
                         </div>
                     </div>
@@ -77,7 +75,6 @@
                 <div class="sheet-frame">
                     <div class="section-heading">
                         <div>
-                            <p class="eyebrow">{{ .Consts.ProjectsIntro }}</p>
                             <h2 id="projects-title">projects</h2>
                         </div>
                     </div>

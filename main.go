@@ -39,8 +39,6 @@ func main() {
 			},
 		},
 
-		ExperienceIntro: "where i've been useful",
-		ProjectsIntro: "things made public",
 		ProjectsEmpty: "github is taking a moment. the work is still there.",
 
 		ContactEmail: "gavinholmie (at) gmail (dot) com",
