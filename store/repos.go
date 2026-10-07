@@ -2,7 +2,9 @@ package store
 
 import (
 	"fmt"
+	"math"
 	"net/http"
+	"strconv"
 	"strings"
 	"time"
 
@@ -21,6 +23,8 @@ type Repo struct {
 	Language    string `json:"language"`
 	Href        string `json:"html_url"`
 	Color       string
+	StarsShort  string
+	ForksShort  string
 }
 
 func fetchLanguageColors() (map[string]string, error) {
@@ -56,4 +60,26 @@ func languageColor(language string, colors map[string]string) string {
 		return color
 	}
 	return "#8b949e"
+}
+
+func abbreviate(count uint) string {
+	if count < 1000 {
+		return strconv.FormatUint(uint64(count), 10)
+	}
+
+	suffixes := []string{"", "k", "m", "b", "t"}
+	value := float64(count)
+	unit := 0
+	for value >= 1000 && unit < len(suffixes)-1 {
+		value /= 1000
+		unit++
+	}
+
+	value = math.Round(value*10) / 10
+	if value >= 1000 && unit < len(suffixes)-1 {
+		value /= 1000
+		unit++
+	}
+
+	return strconv.FormatFloat(value, 'f', -1, 64) + suffixes[unit]
 }
