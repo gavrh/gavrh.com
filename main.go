@@ -106,7 +106,6 @@ func main() {
 	e.IPExtractor = echo.ExtractIPFromXFFHeader()
 	e.Static("/static/assets", "assets")
 	e.Static("/static/css", "css")
-	e.Static("/static/scripts", "scripts")
 	e.Renderer = templates.NewTemplate()
 	handlers.HandleRequests(e, &consts, &atom)
 	e.Start(":6969")

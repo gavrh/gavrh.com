@@ -14,7 +14,6 @@
         <meta property="og:url" content="https://gavrh.com/">
         <meta property="og:image" content="{{ .AvatarUrl }}">
         <meta property="og:image:type" content="image/png">
-        <script src="/static/scripts/index.js?v={{ .Timestamp }}" defer></script>
     </head>
     <body>
         <main>
@@ -25,7 +24,7 @@
                             <h1 id="intro-title">{{ .Consts.FirstName }}<br><span>{{ .Consts.LastName }}</span></h1>
                             <p class="intro-role">{{ range $index, $role := .CurrentRoles }}{{ if $index }}, {{ end }}{{ $role.Role }} @ {{ if $role.Href }}<a href="{{ $role.Href }}" target="_blank" rel="noreferrer">{{ $role.Company }}</a>{{ else }}{{ $role.Company }}{{ end }}{{ end }}</p>
                             <ul class="intro-facts">
-                                <li>i'm <span class="age" data-birthday="{{ .Consts.Birthday.UnixMilli }}">{{ .Age }}</span> years old</li>
+                                <li>i'm {{ .Age }} years old</li>
                                 <li>from {{ .Consts.City }}, {{ .Consts.State }}</li>
                                 <li>i <3 {{ range $index, $interest := .Consts.Interests }}{{ if $index }}{{ if eq $index (sub (len $.Consts.Interests) 1) }}, and {{ else }}, {{ end }}{{ end }}{{ $name := index $interest 0 }}{{ if index $interest 1 }}<a href="{{ index $interest 1 }}" target="_blank" rel="noreferrer">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}{{ end }}</li>
                             </ul>
