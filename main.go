@@ -102,7 +102,6 @@ func main() {
 	e := echo.New()
 	e.Use(middleware.RequestLogger())
 	e.IPExtractor = echo.ExtractIPFromXFFHeader()
-	e.Static("/static/css", "css")
 	e.Renderer = templates.NewTemplate()
 	handlers.HandleRequests(e, &consts, &atom)
 	e.Start(":6969")
