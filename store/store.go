@@ -45,6 +45,8 @@ func RefreshStore(atom *atomic.Value, username string, repoNames []string) {
 							r.Description = strings.ToLower(r.Description)
 							r.Language = strings.ToLower(r.Language)
 							r.Color = languageColor(r.Language, languageColors)
+							r.StarsShort = abbreviate(r.Stars)
+							r.ForksShort = abbreviate(r.Forks)
 							repos = append(repos, r)
 							continue names
 						}

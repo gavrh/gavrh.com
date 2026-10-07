@@ -102,12 +102,12 @@
                                     <span class="project-stats">
                                         {{ if $repo.Stars }}
                                         <span aria-label="{{ $repo.Stars }} stars">
-                                            <img src="/static/assets/star.svg" alt=""><span class="metric-text">{{ $repo.Stars }}</span>
+                                            <img src="/static/assets/star.svg" alt=""><span class="metric-text">{{ $repo.StarsShort }}</span>
                                         </span>
                                         {{ end }}
                                         {{ if $repo.Forks }}
                                         <span aria-label="{{ $repo.Forks }} forks">
-                                            <img src="/static/assets/fork.svg" alt=""><span class="metric-text">{{ $repo.Forks }}</span>
+                                            <img src="/static/assets/fork.svg" alt=""><span class="metric-text">{{ $repo.ForksShort }}</span>
                                         </span>
                                         {{ end }}
                                     </span>
