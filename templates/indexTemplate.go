@@ -17,7 +17,7 @@ type CurrentRole struct {
 type IndexTemplate struct {
 	Consts       *store.Constants
 	Text         string
-	Age          string
+	Age          int
 	CurrentRoles []CurrentRole
 	Repos        []store.Repo
 	AvatarUrl    string
@@ -41,19 +41,13 @@ func currentRoles(experience [][]string) []CurrentRole {
 	return roles
 }
 
-func decimalAge(birthday, now time.Time) float64 {
-	anniversary := func(year int) time.Time {
-		return time.Date(year, birthday.Month(), birthday.Day(), 0, 0, 0, 0, now.Location())
+func age(birthday, now time.Time) int {
+	years := now.Year() - birthday.Year()
+	birthdayThisYear := time.Date(now.Year(), birthday.Month(), birthday.Day(), 0, 0, 0, 0, now.Location())
+	if now.Before(birthdayThisYear) {
+		years--
 	}
-
-	last := anniversary(now.Year())
-	if last.After(now) {
-		last = anniversary(now.Year() - 1)
-	}
-	next := anniversary(last.Year() + 1)
-
-	years := last.Year() - birthday.Year()
-	return float64(years) + float64(now.Sub(last))/float64(next.Sub(last))
+	return years
 }
 
 func sentenceList(items [][]string) string {
@@ -84,7 +78,7 @@ func NewIndexTemplate(consts *store.Constants, repos []store.Repo, avatar store.
 			"%s %s is a %s in %s, %s. he is interested in %s.",
 			consts.FirstName, consts.LastName, consts.Role, consts.City, consts.State,
 			sentenceList(consts.Interests))),
-		Age:          fmt.Sprintf("%.10f", decimalAge(consts.Birthday, now)),
+		Age:          age(consts.Birthday, now),
 		CurrentRoles: currentRoles(consts.Experience),
 		Repos:        repos,
 		AvatarUrl:    avatar.Url,
