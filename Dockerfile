@@ -16,9 +16,6 @@ WORKDIR /app
 
 COPY --from=builder /site ./site
 COPY --from=builder /src/views ./views
-COPY --from=builder /src/assets ./assets
-COPY --from=builder /src/css ./css
-COPY --from=builder /src/scripts ./scripts
 
 USER 65534:65534
 
