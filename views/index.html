@@ -6,137 +6,148 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="{{ .Text }}">
-        <link href="/static/css/index.css?v={{ .Timestamp }}" rel="stylesheet">
-        <link rel="icon" type="image/png" href="{{ .AvatarUrl }}">
+        <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Crect%20width='16'%20height='16'%20rx='4'%20fill='%23fff'/%3E%3Ctext%20x='8'%20y='12'%20text-anchor='middle'%20font-family='sans-serif'%20font-size='11'%20fill='%231c1f26'%3Eg%3C/text%3E%3C/svg%3E">
         <meta property="og:title" content="{{ .Consts.FirstName }} {{ .Consts.LastName }}">
         <meta property="og:description" content="{{ .Text }}">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://gavrh.com/">
         <meta property="og:image" content="{{ .AvatarUrl }}">
-        <meta property="og:image:type" content="image/png">
-        <script src="/static/scripts/index.js?v={{ .Timestamp }}" defer></script>
+        <style>
+            :root {
+                color-scheme: dark;
+                font-size: 90%;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                max-width: 42rem;
+                margin: 0 auto;
+                padding: 3rem 1.5rem 5rem;
+                background: #1c1f26;
+                color: #fff;
+                font-family: Optima, Candara, "Segoe UI", "Noto Sans", sans-serif;
+                font-size: 1rem;
+                line-height: 1.6;
+                text-transform: lowercase;
+            }
+
+            a {
+                color: inherit;
+                text-underline-offset: 0.15em;
+            }
+
+            h1 {
+                font-size: 2rem;
+                font-weight: 600;
+            }
+
+            h2 {
+                margin-top: 2.5rem;
+                font-size: 1.4rem;
+                font-weight: 600;
+            }
+
+            p {
+                margin-top: 0.35rem;
+            }
+
+            li {
+                margin-top: 1.25rem;
+            }
+
+            li p + p {
+                margin-top: 0.1rem;
+            }
+
+            ul,
+            ol {
+                list-style: none;
+            }
+
+            .muted {
+                color: rgba(255, 255, 255, 0.6);
+            }
+
+            .links,
+            .meta {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+
+            .links {
+                margin-top: 0.35rem;
+            }
+
+            .links + p {
+                margin-top: 1rem;
+            }
+
+            .dot {
+                width: 0.6rem;
+                height: 0.6rem;
+                vertical-align: -0.05em;
+            }
+
+            footer {
+                margin-top: 4rem;
+                font-size: 0.85rem;
+            }
+        </style>
     </head>
     <body>
-        <main>
-            <section class="sheet sheet-intro" aria-labelledby="intro-title">
-                <div class="sheet-frame">
-                    <div class="intro-layout">
-                        <div class="intro-copy">
-                            <h1 id="intro-title">{{ .Consts.FirstName }}<br><span>{{ .Consts.LastName }}</span></h1>
-                            <p class="intro-role">{{ range $index, $role := .CurrentRoles }}{{ if $index }}, {{ end }}{{ $role.Role }} @ {{ if $role.Href }}<a href="{{ $role.Href }}" target="_blank" rel="noreferrer">{{ $role.Company }}</a>{{ else }}{{ $role.Company }}{{ end }}{{ end }}</p>
-                            <ul class="intro-facts">
-                                <li>i'm <span class="age" data-birthday="{{ .Consts.Birthday.UnixMilli }}">{{ .Age }}</span> years old</li>
-                                <li>from {{ .Consts.City }}, {{ .Consts.State }}</li>
-                                <li>i <3 {{ range $index, $interest := .Consts.Interests }}{{ if $index }}{{ if eq $index (sub (len $.Consts.Interests) 1) }}, and {{ else }}, {{ end }}{{ end }}{{ $name := index $interest 0 }}{{ if index $interest 1 }}<a href="{{ index $interest 1 }}" target="_blank" rel="noreferrer">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}{{ end }}</li>
-                            </ul>
-                        </div>
-                    </div>
+        <header>
+            <h1>{{ .Consts.FirstName }} {{ .Consts.LastName }}</h1>
+            <p class="links">
+                <span>{{ .Consts.ContactEmail }}</span>
+                {{ range .Consts.Socials }}<a href="{{ index . 1 }}" target="_blank" rel="noreferrer">{{ index . 0 }}</a>{{ end }}
+            </p>
+            <p>i'm {{ .Age }} years old</p>
+            <p>from {{ .Consts.City }}, {{ .Consts.State }}</p>
+            <p>i <3 {{ range $index, $interest := .Consts.Interests }}{{ if $index }}{{ if eq $index (sub (len $.Consts.Interests) 1) }}, and {{ else }}, {{ end }}{{ end }}{{ $name := index $interest 0 }}{{ if index $interest 1 }}<a href="{{ index $interest 1 }}" target="_blank" rel="noreferrer">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}{{ end }}</p>
+        </header>
 
-                    <div class="intro-footer">
-                        <div class="socials" aria-label="External links">
-                            {{ range .Consts.Socials }}
-                            <a href="{{ index . 1 }}" target="_blank" rel="noreferrer">
-                                <span>&nearr;</span> {{ index . 0 }}
-                            </a>
-                            {{ end }}
-                        </div>
-                        <p class="scroll-note"><span aria-hidden="true">&darr;</span> try scrolling</p>
-                    </div>
-                </div>
-            </section>
+        <section aria-labelledby="experience-title">
+            <h2 id="experience-title">experience</h2>
+            <ol>
+                {{ range $experience := .Consts.Experience }}
+                <li>
+                    <p>{{ index $experience 0 }}</p>
+                    <p class="muted">{{ if index $experience 2 }}<a href="{{ index $experience 2 }}" target="_blank" rel="noreferrer">{{ index $experience 1 }}</a>{{ else }}{{ index $experience 1 }}{{ end }}{{ if index $experience 3 }} / {{ index $experience 3 }}{{ end }}{{ if index $experience 4 }} – {{ index $experience 4 }}{{ end }}</p>
+                </li>
+                {{ end }}
+            </ol>
+        </section>
 
-            <section class="sheet sheet-experience" aria-labelledby="experience-title">
-                <div class="sheet-frame">
-                    <div class="section-heading">
-                        <div>
-                            <p class="eyebrow">{{ .Consts.ExperienceIntro }}</p>
-                            <h2 id="experience-title">experience</h2>
-                        </div>
-                    </div>
+        <section aria-labelledby="projects-title">
+            <h2 id="projects-title">projects</h2>
+            <ul>
+                {{ range $repo := .Repos }}
+                <li>
+                    <p class="meta">
+                        <a href="{{ $repo.Href }}" target="_blank" rel="noreferrer">{{ $repo.Name }}</a>
+                        {{ if $repo.Language }}<span class="muted"><svg class="dot" viewBox="0 0 10 10" aria-hidden="true" style="color: {{ $repo.Color }}"><circle cx="5" cy="5" r="4.5" fill="currentColor"/></svg> {{ $repo.Language }}</span>{{ end }}
+                        {{ if $repo.Stars }}<span class="muted">{{ $repo.StarsShort }} star{{ if ne $repo.Stars 1 }}s{{ end }}</span>{{ end }}
+                        {{ if $repo.Forks }}<span class="muted">{{ $repo.ForksShort }} fork{{ if ne $repo.Forks 1 }}s{{ end }}</span>{{ end }}
+                    </p>
+                    {{ if $repo.Description }}
+                    <p class="muted">{{ $repo.Description }}</p>
+                    {{ end }}
+                </li>
+                {{ else }}
+                <li class="muted">{{ .Consts.ProjectsEmpty }}</li>
+                {{ end }}
+            </ul>
+        </section>
 
-                    <ol class="experience-list">
-                        {{ range $experience := .Consts.Experience }}
-                        <li>
-                            <div class="role">
-                                <h3>{{ index $experience 0 }}</h3>
-                                {{ if index $experience 2 }}
-                                <a href="{{ index $experience 2 }}" target="_blank" rel="noreferrer">
-                                    {{ index $experience 1 }} <span aria-hidden="true">&nearr;</span>
-                                </a>
-                                {{ else }}
-                                <p>{{ index $experience 1 }}</p>
-                                {{ end }}
-                            </div>
-                            <p class="dates"><span>{{ index $experience 3 }}</span><span>{{ index $experience 4 }}</span></p>
-                        </li>
-                        {{ end }}
-                    </ol>
-                </div>
-            </section>
-
-            <section class="sheet sheet-projects" aria-labelledby="projects-title">
-                <div class="sheet-frame">
-                    <div class="section-heading">
-                        <div>
-                            <p class="eyebrow">{{ .Consts.ProjectsIntro }}</p>
-                            <h2 id="projects-title">projects</h2>
-                        </div>
-                    </div>
-
-                    <div class="project-list">
-                        {{ range $repo := .Repos }}
-                        <a class="project" href="{{ $repo.Href }}" target="_blank" rel="noreferrer">
-                            <h3>{{ $repo.Name }}</h3>
-                            <p>{{ $repo.Description }}</p>
-                            <div class="project-actions">
-                                <div class="project-details">
-                                    {{ if $repo.Language }}
-                                    <span class="project-language">
-                                        <svg class="language-dot" viewBox="0 0 10 10" aria-hidden="true" style="color: {{ $repo.Color }}">
-                                            <circle cx="5" cy="5" r="4.5"></circle>
-                                        </svg>
-                                        <span class="metric-text">{{ $repo.Language }}</span>
-                                    </span>
-                                    {{ end }}
-                                    {{ if or $repo.Stars $repo.Forks }}
-                                    <span class="project-stats">
-                                        {{ if $repo.Stars }}
-                                        <span aria-label="{{ $repo.Stars }} stars">
-                                            <img src="/static/assets/star.svg" alt=""><span class="metric-text">{{ $repo.Stars }}</span>
-                                        </span>
-                                        {{ end }}
-                                        {{ if $repo.Forks }}
-                                        <span aria-label="{{ $repo.Forks }} forks">
-                                            <img src="/static/assets/fork.svg" alt=""><span class="metric-text">{{ $repo.Forks }}</span>
-                                        </span>
-                                        {{ end }}
-                                    </span>
-                                    {{ end }}
-                                </div>
-                                <span class="project-arrow" aria-hidden="true">&nearr;</span>
-                            </div>
-                        </a>
-                        {{ else }}
-                        <p class="empty-state">{{ .Consts.ProjectsEmpty }}</p>
-                        {{ end }}
-                    </div>
-                </div>
-            </section>
-
-            <section class="sheet sheet-contact" aria-labelledby="contact-title">
-                <div class="sheet-frame">
-                    <div class="contact-copy">
-                        <p class="eyebrow">looking for an engineer?</p>
-                        <h2 id="contact-title">let's build<br><span>something</span> <em>great.</em></h2>
-                        <p class="contact-email">{{ .Consts.ContactEmail }}</p>
-                    </div>
-
-                    <div class="end-matter">
-                        <p>&copy; {{ .Consts.CopyrightPrefix }} {{ .Year }}</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <footer>
+            <p class="muted">&copy; {{ .Consts.CopyrightPrefix }} {{ .Year }}</p>
+        </footer>
     </body>
 </html>
 {{ end }}
