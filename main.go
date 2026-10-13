@@ -87,6 +87,7 @@ func main() {
 		&atom,
 		"gavrh",
 		[]string{
+			"3dvalley",
 			"sense",
 			"discordml",
 			"stutter",
