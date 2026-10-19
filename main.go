@@ -5,100 +5,25 @@ import (
 	"gavrh.com/site/store"
 	"gavrh.com/site/templates"
 
+	"os"
 	"sync/atomic"
-	"time"
 
+	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
+	_ = godotenv.Load()
 
-	consts := store.Constants{
-		FirstName: "gavin",
-		LastName: "holmes",
-
-		Birthday: time.Date(2005, time.May, 27, 0, 0, 0, 0, time.Local),
-
-		Role: "software engineer",
-		City: "san francisco",
-		State: "ca",
-		Interests: [][]string{
-			{
-				"networks",
-				"",
-			}, {
-				"security",
-				"",
-			}, {
-				"tooling",
-				"",
-			}, {
-				"linux",
-				"https://github.com/gavrh/dotfiles",
-			},
-		},
-
-		ProjectsEmpty: "github is taking a moment. the work is still there.",
-
-		ContactEmail: "gavinholmie (at) gmail (dot) com",
-		CopyrightPrefix: "all rights reserved",
-		Socials: [][]string{
-			{
-				"linkedin",
-				"https://www.linkedin.com/in/gavrh",
-			}, {
-				"github",
-				"https://github.com/gavrh",
-			},
-		},
-		Experience: [][]string{
-			{
-				"gameplay engineer",
-				"locked in studios",
-				"https://locked.dev",
-				"jul 2026",
-				"present",
-			}, {
-				"computer science tutor",
-				"freelance",
-				"",
-				"apr 2023",
-				"dec 2025",
-			}, {
-				"freelance swe",
-				"fiverr",
-				"https://fiverr.com",
-				"jan 2021",
-				"apr 2025",
-			}, {
-				"open source contributor",
-				"for the love of the game",
-				"",
-				"ᦠ",
-				"",
-			},
-		},
-	}
+	consts := store.LoadConstants()
 
 	var atom atomic.Value
 	atom.Store(store.Store{Repos: []store.Repo{}})
 	go store.RefreshStore(
 		&atom,
-		"gavrh",
-		[]string{
-			"3dvalley",
-			"sense",
-			"discordml",
-			"stutter",
-			"fault",
-			"rojo-placepack",
-			"noslate",
-			"spotless",
-			"librespot-c",
-			"leetcode",
-			"gavrh.com",
-		},
+		os.Getenv("GITHUB_USERNAME"),
+		store.LoadRepoConfigs(),
 	)
 
 	e := echo.New()
