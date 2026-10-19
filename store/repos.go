@@ -27,6 +27,11 @@ type Repo struct {
 	ForksShort  string
 }
 
+type RepoConfig struct {
+	Name string
+	Href string
+}
+
 func fetchLanguageColors() (map[string]string, error) {
 	res, err := githubClient.Get(languageColorsURL)
 	if err != nil {
