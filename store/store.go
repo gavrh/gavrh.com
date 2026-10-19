@@ -48,6 +48,16 @@ func RefreshStore(atom *atomic.Value, username string, repoConfigs []RepoConfig)
 							continue names
 						}
 					}
+
+					if config.Href != "" {
+						repo, err := fetchRepo(config.Href)
+						if err != nil {
+							repo = Repo{Name: config.Name}
+						}
+						repo = prepareRepo(repo, languageColors)
+						repo.Href = config.Href
+						repos = append(repos, repo)
+					}
 				}
 			}
 		}
