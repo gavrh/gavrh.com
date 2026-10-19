@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"strings"
 	"sync/atomic"
 	"time"
 )
@@ -14,7 +13,7 @@ type Store struct {
 	Repos  []Repo
 }
 
-func RefreshStore(atom *atomic.Value, username string, repoNames []string) {
+func RefreshStore(atom *atomic.Value, username string, repoConfigs []RepoConfig) {
 	var languageColors map[string]string
 
 	for {
@@ -38,15 +37,13 @@ func RefreshStore(atom *atomic.Value, username string, repoNames []string) {
 
 			if err == nil && res.StatusCode == http.StatusOK {
 			names:
-				for _, n := range repoNames {
+				for _, config := range repoConfigs {
 					for _, r := range repoData {
-						if r.Name == n {
-							r.Name = strings.ToLower(r.Name)
-							r.Description = strings.ToLower(r.Description)
-							r.Language = strings.ToLower(r.Language)
-							r.Color = languageColor(r.Language, languageColors)
-							r.StarsShort = abbreviate(r.Stars)
-							r.ForksShort = abbreviate(r.Forks)
+						if r.Name == config.Name {
+							r = prepareRepo(r, languageColors)
+							if config.Href != "" {
+								r.Href = config.Href
+							}
 							repos = append(repos, r)
 							continue names
 						}

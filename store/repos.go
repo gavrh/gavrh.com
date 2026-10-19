@@ -32,6 +32,16 @@ type RepoConfig struct {
 	Href string
 }
 
+func prepareRepo(repo Repo, languageColors map[string]string) Repo {
+	repo.Name = strings.ToLower(repo.Name)
+	repo.Description = strings.ToLower(repo.Description)
+	repo.Language = strings.ToLower(repo.Language)
+	repo.Color = languageColor(repo.Language, languageColors)
+	repo.StarsShort = abbreviate(repo.Stars)
+	repo.ForksShort = abbreviate(repo.Forks)
+	return repo
+}
+
 func fetchLanguageColors() (map[string]string, error) {
 	res, err := githubClient.Get(languageColorsURL)
 	if err != nil {
