@@ -1,9 +1,11 @@
 package store
 
 import (
+	"encoding/json"
 	"fmt"
 	"math"
 	"net/http"
+	"net/url"
 	"strconv"
 	"strings"
 	"time"
@@ -25,6 +27,57 @@ type Repo struct {
 	Color       string
 	StarsShort  string
 	ForksShort  string
+}
+
+type RepoConfig struct {
+	Name string
+	Href string
+}
+
+func prepareRepo(repo Repo, languageColors map[string]string) Repo {
+	repo.Name = strings.ToLower(repo.Name)
+	repo.Description = strings.ToLower(repo.Description)
+	repo.Language = strings.ToLower(repo.Language)
+	repo.Color = languageColor(repo.Language, languageColors)
+	repo.StarsShort = abbreviate(repo.Stars)
+	repo.ForksShort = abbreviate(repo.Forks)
+	return repo
+}
+
+func fetchRepo(href string) (Repo, error) {
+	var repo Repo
+
+	u, err := url.Parse(href)
+	if err != nil {
+		return repo, err
+	}
+
+	host := strings.ToLower(u.Hostname())
+	if host != "github.com" && host != "www.github.com" {
+		return repo, fmt.Errorf("not a github repo: %s", href)
+	}
+
+	parts := strings.Split(strings.Trim(u.Path, "/"), "/")
+	if len(parts) < 2 {
+		return repo, fmt.Errorf("invalid github repo: %s", href)
+	}
+
+	owner, name := parts[0], strings.TrimSuffix(parts[1], ".git")
+	res, err := githubClient.Get(fmt.Sprintf("https://api.github.com/repos/%s/%s", url.PathEscape(owner), url.PathEscape(name)))
+	if err != nil {
+		return repo, err
+	}
+	defer res.Body.Close()
+
+	if res.StatusCode != http.StatusOK {
+		return repo, fmt.Errorf("fetch repo %s/%s: %s", owner, name, res.Status)
+	}
+
+	if err := json.NewDecoder(res.Body).Decode(&repo); err != nil {
+		return repo, err
+	}
+
+	return repo, nil
 }
 
 func fetchLanguageColors() (map[string]string, error) {
