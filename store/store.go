@@ -52,10 +52,7 @@ func RefreshStore(atom *atomic.Value, username string, repoConfigs []RepoConfig)
 					if config.Href != "" {
 						repo, err := fetchRepo(config.Href)
 						if err != nil {
-						repo, err := fetchRepo(config.Href)
-						if err != nil {
 							continue
-						}
 						}
 						repo = prepareRepo(repo, languageColors)
 						repo.Href = config.Href
