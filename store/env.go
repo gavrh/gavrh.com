@@ -7,7 +7,10 @@ import (
 )
 
 func LoadConstants() Constants {
-	birthday, _ := time.Parse("2006-01-02", os.Getenv("BIRTHDAY"))
+	birthday, err := time.Parse("2006-01-02", os.Getenv("BIRTHDAY"))
+	if err != nil {
+		log.Printf("invalid BIRTHDAY %q: %v", os.Getenv("BIRTHDAY"), err)
+	}
 
 	return Constants{
 		FirstName:       os.Getenv("FIRST_NAME"),
