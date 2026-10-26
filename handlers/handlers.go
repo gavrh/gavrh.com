@@ -19,5 +19,12 @@ func HandleRequests(e *echo.Echo, consts *store.Constants, atom *atomic.Value) {
 }
 
 func HandleGet(c echo.Context, consts *store.Constants, atom *atomic.Value) error {
+
+	path := c.Param("path")
+
+	if path != "" {
+		return c.Redirect(303, "/")
+	}
+
 	return c.Render(http.StatusOK, templates.Index, templates.NewIndexTemplate(consts, atom.Load().(store.Store).Repos, atom.Load().(store.Store).Avatar))
 }
