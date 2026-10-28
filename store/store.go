@@ -28,36 +28,31 @@ func RefreshStore(atom *atomic.Value, username string, repoConfigs []RepoConfig)
 
 		res, err := githubClient.Get(fmt.Sprintf("https://api.github.com/users/%s/repos", username))
 
+		var repoData []Repo
 		if err == nil {
-			var repoData []Repo
 			if res.StatusCode == http.StatusOK {
 				err = json.NewDecoder(res.Body).Decode(&repoData)
 			}
 			res.Body.Close()
+		}
 
-			if err == nil && res.StatusCode == http.StatusOK {
-			names:
-				for _, config := range repoConfigs {
-					for _, r := range repoData {
-						if r.Name == config.Name {
-							r = prepareRepo(r, languageColors)
-							if config.Href != "" {
-								r.Href = config.Href
-							}
-							repos = append(repos, r)
-							continue names
-						}
-					}
+		for _, config := range repoConfigs {
+			if config.Href != "" {
+				repo, err := fetchRepo(config.Href)
+				if err != nil {
+					continue
+				}
 
-					if config.Href != "" {
-						repo, err := fetchRepo(config.Href)
-						if err != nil {
-							continue
-						}
-						repo = prepareRepo(repo, languageColors)
-						repo.Href = config.Href
-						repos = append(repos, repo)
-					}
+				repo = prepareRepo(repo, languageColors)
+				repo.Href = config.Href
+				repos = append(repos, repo)
+				continue
+			}
+
+			for _, r := range repoData {
+				if r.Name == config.Name {
+					repos = append(repos, prepareRepo(r, languageColors))
+					break
 				}
 			}
 		}
